@@ -1,0 +1,82 @@
+@import url('https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/plus-jakarta-display.min.css');
+
+body {
+  font-family: 'Plus Jakarta Display', sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 120%;
+}
+
+h1 {
+  font-size: 100px;
+  text-transform: uppercase;
+  color: #f6f6f6;
+  font-weight: 400;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 68px;
+  color: #f7f7f7;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 119%;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+p {
+  font-size: 14px;
+  line-height: 119%;
+  color: rgb(246, 246, 246, 0.9);
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+.line {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 100%;
+  height: 1px;
+}
+
+.label {
+  font-size: 15px;
+  line-height: 119%;
+  text-transform: uppercase;
+  color: rgb(138, 138, 138, 0.6);
+}
+
+.full-flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  padding: 15px 65px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  height: 100vh;
+  background: #1e1e1e;
+
+  .fp-overflow {
+    height: 100%;
+  }
+}

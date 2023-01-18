@@ -1,0 +1,125 @@
+#s-1 {
+  background-image: url('../../assets/images/backgrounds/s_1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 105%;
+  padding-bottom: 30px;
+
+  .fp-overflow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.welcome-block {
+  width: fit-content;
+  margin: auto 0;
+  h1 svg {
+    margin-left: 50px;
+  }
+
+  h1:last-child {
+    margin-left: 100px;
+  }
+}
+
+.scroll-label {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: fit-content;
+  margin-bottom: 0;
+  cursor: pointer;
+  span {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 119%;
+    background: linear-gradient(
+      97.73deg,
+      #ffffff 1.66%,
+      rgba(255, 255, 255, 0.494384) 54.37%,
+      #ffffff 105.91%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+
+#s-2 {
+  .line {
+    margin: 45px 0;
+  }
+
+  .we-cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+
+    .card {
+      flex: 1;
+
+      h3,
+      p {
+        transition: color 0.5s ease;
+      }
+
+      &:hover {
+        p {
+          color: rgb(243, 243, 243, 0.8);
+        }
+
+        h3 {
+          color: #fff;
+        }
+
+        .card__head {
+          background-color: #fff;
+          transition: background-color 0.8s ease;
+        }
+
+        .card__num {
+          color: #050606;
+        }
+      }
+
+      &__num {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+
+        transition: color 0.5s ease;
+      }
+
+      &__head {
+        height: 460px;
+        width: 100%;
+        position: relative;
+        background-color: #0a090a;
+
+        transition: background-color 0.4s ease;
+      }
+
+      &__body {
+        padding-top: 15px;
+        width: 100%;
+
+        .line {
+          margin: 15px 0;
+        }
+
+        p {
+          color: rgb(243, 243, 243, 0.4);
+        }
+
+        h3 {
+          color: rgb(255, 255, 255, 0.4);
+        }
+      }
+    }
+  }
+}

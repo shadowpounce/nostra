@@ -1,5 +1,6 @@
 import ReactFullpage from '@fullpage/react-fullpage'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import Header from '../../Components/Header/Header'
 
@@ -20,24 +21,23 @@ const Home = () => (
               <h1>Meta what?</h1>
               <h1>
                 Let's discuss
-                <svg
-                  onClick={() => {
-                    fullpageApi.moveSectionDown()
-                  }}
-                  className="arrow"
-                  width="42"
-                  height="42"
-                  viewBox="0 0 42 42"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3 3L39 39M39 39V14.4545M39 39H14.4545"
-                    stroke="#F6F6F6"
-                    strokeWidth="4.90909"
-                    strokeLinecap="round"
-                  />
-                </svg>
+                <Link to="/about">
+                  <svg
+                    className="arrow"
+                    width="42"
+                    height="42"
+                    viewBox="0 0 42 42"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3 3L39 39M39 39V14.4545M39 39H14.4545"
+                      stroke="#F6F6F6"
+                      strokeWidth="4.90909"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </Link>
               </h1>
             </div>
             <div className="scroll-label">

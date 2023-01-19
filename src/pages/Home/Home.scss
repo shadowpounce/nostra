@@ -68,25 +68,6 @@
         transition: color 0.5s ease;
       }
 
-      &:hover {
-        p {
-          color: rgb(243, 243, 243, 0.8);
-        }
-
-        h3 {
-          color: #fff;
-        }
-
-        .card__head {
-          background-color: #fff;
-          transition: background-color 0.8s ease;
-        }
-
-        .card__num {
-          color: #050606;
-        }
-      }
-
       &__num {
         position: absolute;
         bottom: 20px;

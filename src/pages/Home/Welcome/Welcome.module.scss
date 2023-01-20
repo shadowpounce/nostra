@@ -1,0 +1,44 @@
+.welcome {
+  background-image: url('./assets/s_1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 105%;
+  padding-bottom: 30px;
+}
+
+.block {
+  width: fit-content;
+  margin: auto 0;
+  h1 svg {
+    margin-left: 50px;
+  }
+
+  h1:last-child {
+    margin-left: 100px;
+  }
+}
+
+.scrollLabel {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: fit-content;
+  margin-bottom: 0;
+  cursor: pointer;
+  transform: scale(1.5) translate(0, -5px);
+  span {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 119%;
+    background: linear-gradient(
+      97.73deg,
+      #ffffff 1.66%,
+      rgba(255, 255, 255, 0.494384) 54.37%,
+      #ffffff 105.91%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}

@@ -1,0 +1,126 @@
+.footer {
+  background-color: #ffffff !important;
+  border-radius: 55px;
+  padding: 75px 80px 50px 50px;
+
+  height: 500px;
+  min-height: 500px;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 450px;
+    height: 700px;
+    background: linear-gradient(
+      30.78deg,
+      #ff94b9 19.16%,
+      #f95199 41.17%,
+      #c72dea 58.82%
+    );
+    opacity: 0.2;
+    filter: blur(75px);
+    transform: rotate(75deg);
+    position: absolute;
+    left: 50%;
+    top: -15%;
+    pointer-events: none;
+  }
+
+  .form {
+    gap: 25px;
+    min-width: 360px;
+    max-width: 360px;
+
+    button {
+      width: 123px;
+    }
+
+    h3 {
+      color: #0d0d0e;
+      opacity: 0.8;
+    }
+
+    input {
+      border: 1.5px solid rgba(13, 13, 14, 0.3);
+      border-radius: 80px;
+      padding: 10px 25px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 119%;
+      color: rgb(13, 13, 14, 0.4);
+      width: 100%;
+    }
+
+    .email {
+      height: 60px;
+    }
+
+    .question {
+      height: 180px;
+      border-radius: 36px;
+    }
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    height: 325px;
+    min-height: 100%;
+
+    &:nth-child(2) {
+      gap: 40px;
+
+      p {
+        text-transform: uppercase;
+        color: #333333;
+        opacity: 0.4;
+      }
+    }
+
+    &:nth-child(3) {
+      gap: 20px;
+
+      a {
+        text-decoration: none;
+        color: #333333;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+
+      a {
+        text-transform: capitalize;
+        text-decoration: none;
+        color: #0d0d0e;
+      }
+    }
+
+    &.colOne {
+      max-width: 150px;
+      width: 100%;
+      justify-content: start;
+    }
+
+    .mail {
+      text-decoration-line: underline;
+      color: #0d0d0e !important;
+      opacity: 0.9;
+      margin-top: 35px;
+      display: block;
+    }
+
+    .copyright {
+      font-weight: 400;
+      font-size: 15.4844px;
+      line-height: 27px;
+      font-feature-settings: 'salt' on, 'liga' off;
+      color: #000000;
+      opacity: 0.4;
+      margin-top: auto;
+    }
+  }
+}

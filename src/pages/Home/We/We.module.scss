@@ -24,6 +24,10 @@
         p {
           color: #f3f3f3 !important;
         }
+
+        .cardNum {
+          color: #050606 !important;
+        }
       }
 
       h3,
@@ -32,6 +36,7 @@
       }
 
       .cardNum {
+        font-weight: 500;
         position: absolute;
         bottom: 20px;
         left: 20px;

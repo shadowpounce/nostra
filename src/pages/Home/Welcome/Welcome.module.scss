@@ -4,6 +4,24 @@
   background-repeat: no-repeat;
   background-size: 105%;
   padding-bottom: 30px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 290px;
+    height: 520px;
+    background: linear-gradient(
+      30.78deg,
+      #c07a92 19.16%,
+      #993962 41.17%,
+      #3c1046 59.12%
+    );
+    opacity: 0.5;
+    filter: blur(75px);
+    transform: rotate(57.37deg);
+    position: absolute;
+    pointer-events: none;
+  }
 }
 
 .block {

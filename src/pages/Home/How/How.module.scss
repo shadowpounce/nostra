@@ -1,0 +1,111 @@
+.how {
+  &::before {
+    content: '';
+    position: absolute;
+    width: 450px;
+    height: 720px;
+    left: 45%;
+    bottom: -5%;
+    translate: (-50%, 0);
+    background: linear-gradient(
+      30.78deg,
+      #c07a92 19.16%,
+      #993962 41.17%,
+      #3c1046 59.12%
+    );
+    opacity: 0.15;
+    filter: blur(75px);
+    transform: rotate(57.37deg);
+  }
+  .container {
+    padding: 0 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    overflow-y: hidden;
+
+    h3 {
+      text-transform: uppercase;
+      margin: 0 auto;
+      width: fit-content;
+    }
+
+    .wrap {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 20px;
+
+      .row {
+        width: 100%;
+        display: flex;
+        gap: 35px;
+        justify-content: center;
+        align-items: center;
+
+        .title h4::after {
+          content: '';
+          position: absolute;
+          top: 56%;
+          right: -5%;
+          transform: translate(0, -50%) rotate(45deg);
+          background: #c2c1c1;
+          opacity: 0.2;
+          width: 11px;
+          height: 11px;
+        }
+
+        &:last-child .title:last-child h4::after {
+          display: none;
+        }
+      }
+
+      .title {
+        width: fit-content;
+        position: relative;
+
+        &:hover {
+          img {
+            opacity: 1;
+          }
+
+          h4 {
+            z-index: 5;
+          }
+        }
+
+        h4 {
+          position: relative;
+          cursor: pointer;
+          display: block;
+          transform: scale(0.9);
+          transform-origin: center;
+          white-space: nowrap;
+          color: rgb(247, 247, 247, 0.1);
+          transition: color 0.5s ease;
+          z-index: 2;
+
+          &:hover {
+            text-decoration-line: underline;
+            color: #f7f7f7;
+            mix-blend-mode: difference;
+          }
+        }
+
+        img {
+          position: absolute;
+          z-index: 3;
+          opacity: 0;
+          left: 50%;
+          top: -200%;
+          transform: translate(-50%, 0);
+          pointer-events: none;
+          transition: opacity 0.5s ease;
+        }
+      }
+    }
+  }
+}

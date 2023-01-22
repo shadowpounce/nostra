@@ -3,12 +3,13 @@
 body {
   font-family: 'Plus Jakarta Display', sans-serif;
   font-weight: 400;
-  background-color: #1e1e1e;
+  background: #0d0d0e;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   line-height: 120%;
 }
 
@@ -30,6 +31,13 @@ h3 {
   font-size: 30px;
   line-height: 119%;
   color: rgb(255, 255, 255, 0.6);
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 68px;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 input::placeholder {

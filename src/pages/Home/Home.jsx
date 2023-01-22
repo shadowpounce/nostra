@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Welcome from './Welcome/Welcome'
 import We from './We/We'
 import ForYou from './ForYou/ForYou'
+import How from './How/How'
 import Footer from '../../Components/Footer/Footer'
 
 import './Home.scss'
@@ -20,6 +21,7 @@ const Home = () => (
           <Welcome />
           <We />
           <ForYou />
+          <How />
           <Footer />
         </ReactFullpage.Wrapper>
       )

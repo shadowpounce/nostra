@@ -6,19 +6,40 @@ import styles from './ForYou.module.scss'
 import Img1 from './assets/1.png'
 
 const ForYou = () => {
-  // calculating body width for each case
+  const [activeCaseID, setActiveCaseID] = useState(0)
+
   useEffect(() => {
     const caseHeads = document.querySelectorAll(`.${styles.caseHead}`)
     const caseWidth = caseHeads[0].offsetWidth
     const cases = caseHeads.length
     const casesWidth = caseWidth * cases
-
+    const casesArr = Array.from(caseHeads)
     const caseBodyWidth = document.body.clientWidth - casesWidth
+
+    casesArr.forEach((el, idx) => {
+      el.addEventListener('click', (e) => {
+        const id = casesArr.indexOf(el)
+        setActiveCaseID(id)
+      })
+      el.querySelector('span').innerHTML = `/0${idx + 1}`
+    })
 
     document
       .querySelectorAll(`.${styles.caseBody}`)
       .forEach((body) => (body.style.width = `${caseBodyWidth}px`))
   }, [])
+
+  useEffect(() => {
+    const cases = document.querySelectorAll(`.${styles.case}`)
+
+    cases.forEach(
+      (el) => (el.querySelector(`.${styles.caseBody}`).style.display = `none`)
+    )
+
+    cases[activeCaseID].querySelector(
+      `.${styles.caseBody}`
+    ).style.display = `block`
+  }, [activeCaseID])
 
   return (
     <section className={`section ${styles.forYou}`} id="s-3">
@@ -40,24 +61,26 @@ const ForYou = () => {
                   <path
                     d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
                     stroke="white"
-                    stroke-width="1.77273"
-                    stroke-linecap="round"
+                    strokeWidth="1.77273"
+                    strokeLinecap="round"
                   />
                 </svg>
               </div>
             </div>
             <div className={styles.caseBody}>
-              <h1>digital twins</h1>
-              <img src={Img1} alt="" className={styles.image} />
-              <div>
-                <a href="">
-                  <p>Download PDF</p>
-                </a>
-                <p>
-                  Nostra aims to constantly set new standards and to facilitate
-                  social immersion to lead the way to convoy people together in
-                  an innovative, new digital world.
-                </p>
+              <div className={styles.wrap}>
+                <h4>digital twins</h4>
+                <img src={Img1} alt="" className={styles.image} />
+                <div>
+                  <a href="">
+                    <p>Download PDF</p>
+                  </a>
+                  <p>
+                    Nostra aims to constantly set new standards and to
+                    facilitate social immersion to lead the way to convoy people
+                    together in an innovative, new digital world.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -76,24 +99,26 @@ const ForYou = () => {
                   <path
                     d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
                     stroke="white"
-                    stroke-width="1.77273"
-                    stroke-linecap="round"
+                    strokeWidth="1.77273"
+                    strokeLinecap="round"
                   />
                 </svg>
               </div>
             </div>
             <div className={styles.caseBody}>
-              <h1>digital twins</h1>
-              <img src={Img1} alt="" className={styles.image} />
-              <div>
-                <a href="">
-                  <p>Download PDF</p>
-                </a>
-                <p>
-                  Nostra aims to constantly set new standards and to facilitate
-                  social immersion to lead the way to convoy people together in
-                  an innovative, new digital world.
-                </p>
+              <div className={styles.wrap}>
+                <h4>digital twins</h4>
+                <img src={Img1} alt="" className={styles.image} />
+                <div>
+                  <a href="">
+                    <p>Download PDF</p>
+                  </a>
+                  <p>
+                    Nostra aims to constantly set new standards and to
+                    facilitate social immersion to lead the way to convoy people
+                    together in an innovative, new digital world.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -112,24 +137,26 @@ const ForYou = () => {
                   <path
                     d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
                     stroke="white"
-                    stroke-width="1.77273"
-                    stroke-linecap="round"
+                    strokeWidth="1.77273"
+                    strokeLinecap="round"
                   />
                 </svg>
               </div>
             </div>
             <div className={styles.caseBody}>
-              <h1>digital twins</h1>
-              <img src={Img1} alt="" className={styles.image} />
-              <div>
-                <a href="">
-                  <p>Download PDF</p>
-                </a>
-                <p>
-                  Nostra aims to constantly set new standards and to facilitate
-                  social immersion to lead the way to convoy people together in
-                  an innovative, new digital world.
-                </p>
+              <div className={styles.wrap}>
+                <h4>digital twins</h4>
+                <img src={Img1} alt="" className={styles.image} />
+                <div>
+                  <a href="">
+                    <p>Download PDF</p>
+                  </a>
+                  <p>
+                    Nostra aims to constantly set new standards and to
+                    facilitate social immersion to lead the way to convoy people
+                    together in an innovative, new digital world.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -148,24 +175,26 @@ const ForYou = () => {
                   <path
                     d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
                     stroke="white"
-                    stroke-width="1.77273"
-                    stroke-linecap="round"
+                    strokeWidth="1.77273"
+                    strokeLinecap="round"
                   />
                 </svg>
               </div>
             </div>
             <div className={styles.caseBody}>
-              <h1>digital twins</h1>
-              <img src={Img1} alt="" className={styles.image} />
-              <div>
-                <a href="">
-                  <p>Download PDF</p>
-                </a>
-                <p>
-                  Nostra aims to constantly set new standards and to facilitate
-                  social immersion to lead the way to convoy people together in
-                  an innovative, new digital world.
-                </p>
+              <div className={styles.wrap}>
+                <h4>digital twins</h4>
+                <img src={Img1} alt="" className={styles.image} />
+                <div>
+                  <a href="">
+                    <p>Download PDF</p>
+                  </a>
+                  <p>
+                    Nostra aims to constantly set new standards and to
+                    facilitate social immersion to lead the way to convoy people
+                    together in an innovative, new digital world.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -184,24 +213,26 @@ const ForYou = () => {
                   <path
                     d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
                     stroke="white"
-                    stroke-width="1.77273"
-                    stroke-linecap="round"
+                    strokeWidth="1.77273"
+                    strokeLinecap="round"
                   />
                 </svg>
               </div>
             </div>
             <div className={styles.caseBody}>
-              <h1>digital twins</h1>
-              <img src={Img1} alt="" className={styles.image} />
-              <div>
-                <a href="">
-                  <p>Download PDF</p>
-                </a>
-                <p>
-                  Nostra aims to constantly set new standards and to facilitate
-                  social immersion to lead the way to convoy people together in
-                  an innovative, new digital world.
-                </p>
+              <div className={styles.wrap}>
+                <h4>digital twins</h4>
+                <img src={Img1} alt="" className={styles.image} />
+                <div>
+                  <a href="">
+                    <p>Download PDF</p>
+                  </a>
+                  <p>
+                    Nostra aims to constantly set new standards and to
+                    facilitate social immersion to lead the way to convoy people
+                    together in an innovative, new digital world.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -220,24 +251,26 @@ const ForYou = () => {
                   <path
                     d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
                     stroke="white"
-                    stroke-width="1.77273"
-                    stroke-linecap="round"
+                    strokeWidth="1.77273"
+                    strokeLinecap="round"
                   />
                 </svg>
               </div>
             </div>
             <div className={styles.caseBody}>
-              <h1>digital twins</h1>
-              <img src={Img1} alt="" className={styles.image} />
-              <div>
-                <a href="">
-                  <p>Download PDF</p>
-                </a>
-                <p>
-                  Nostra aims to constantly set new standards and to facilitate
-                  social immersion to lead the way to convoy people together in
-                  an innovative, new digital world.
-                </p>
+              <div className={styles.wrap}>
+                <h4>digital twins</h4>
+                <img src={Img1} alt="" className={styles.image} />
+                <div>
+                  <a href="">
+                    <p>Download PDF</p>
+                  </a>
+                  <p>
+                    Nostra aims to constantly set new standards and to
+                    facilitate social immersion to lead the way to convoy people
+                    together in an innovative, new digital world.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -256,24 +289,26 @@ const ForYou = () => {
                   <path
                     d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
                     stroke="white"
-                    stroke-width="1.77273"
-                    stroke-linecap="round"
+                    strokeWidth="1.77273"
+                    strokeLinecap="round"
                   />
                 </svg>
               </div>
             </div>
             <div className={styles.caseBody}>
-              <h1>digital twins</h1>
-              <img src={Img1} alt="" className={styles.image} />
-              <div>
-                <a href="">
-                  <p>Download PDF</p>
-                </a>
-                <p>
-                  Nostra aims to constantly set new standards and to facilitate
-                  social immersion to lead the way to convoy people together in
-                  an innovative, new digital world.
-                </p>
+              <div className={styles.wrap}>
+                <h4>digital twins</h4>
+                <img src={Img1} alt="" className={styles.image} />
+                <div>
+                  <a href="">
+                    <p>Download PDF</p>
+                  </a>
+                  <p>
+                    Nostra aims to constantly set new standards and to
+                    facilitate social immersion to lead the way to convoy people
+                    together in an innovative, new digital world.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -292,24 +327,26 @@ const ForYou = () => {
                   <path
                     d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
                     stroke="white"
-                    stroke-width="1.77273"
-                    stroke-linecap="round"
+                    strokeWidth="1.77273"
+                    strokeLinecap="round"
                   />
                 </svg>
               </div>
             </div>
             <div className={styles.caseBody}>
-              <h1>digital twins</h1>
-              <img src={Img1} alt="" className={styles.image} />
-              <div>
-                <a href="">
-                  <p>Download PDF</p>
-                </a>
-                <p>
-                  Nostra aims to constantly set new standards and to facilitate
-                  social immersion to lead the way to convoy people together in
-                  an innovative, new digital world.
-                </p>
+              <div className={styles.wrap}>
+                <h4>digital twins</h4>
+                <img src={Img1} alt="" className={styles.image} />
+                <div>
+                  <a href="">
+                    <p>Download PDF</p>
+                  </a>
+                  <p>
+                    Nostra aims to constantly set new standards and to
+                    facilitate social immersion to lead the way to convoy people
+                    together in an innovative, new digital world.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

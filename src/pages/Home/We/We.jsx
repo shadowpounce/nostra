@@ -5,6 +5,9 @@ import styles from './We.module.scss'
 import cardImg01 from './assets/01.png'
 import cardImg02 from './assets/02.png'
 import cardImg03 from './assets/03.png'
+import cardImg01W from './assets/01.webp'
+import cardImg02W from './assets/02.webp'
+import cardImg03W from './assets/03.webp'
 
 const We = () => {
   const [cards, setCards] = useState('')

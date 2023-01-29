@@ -1,0 +1,57 @@
+.impressions {
+  overflow: hidden;
+  position: relative;
+
+  .rgb {
+    position: absolute;
+    top: 0;
+    width: 800px;
+    height: 800px;
+    right: 10%;
+    mix-blend-mode: darken;
+    z-index: -10;
+  }
+
+  h4 {
+    width: fit-content;
+    margin: 0 auto;
+    color: #ffffff;
+  }
+
+  &Carousel {
+    width: 100%;
+    rotate: -7deg;
+
+    .carouselItem {
+      opacity: 0.1;
+      transition: opacity 0.35s ease;
+    }
+
+    .active {
+      opacity: 1;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 80px;
+    height: 100%;
+  }
+
+  .downloadBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10.5px;
+    padding: 10px;
+    min-width: 340px;
+    width: fit-content;
+    height: 95px;
+    box-shadow: 0px 4px 16px rgba(60, 60, 60, 0.07);
+    border-radius: 79px;
+    background-color: #fff;
+  }
+}

@@ -6,6 +6,7 @@ import Welcome from './Welcome/Welcome'
 import We from './We/We'
 import ForYou from './ForYou/ForYou'
 import How from './How/How'
+import Impressions from './Impressions/Impressions'
 import Footer from '../../Components/Footer/Footer'
 
 import './Home.scss'
@@ -22,6 +23,7 @@ const Home = () => (
           <We />
           <ForYou />
           <How />
+          <Impressions />
           <Footer />
         </ReactFullpage.Wrapper>
       )

@@ -1,6 +1,5 @@
 import ReactFullpage from '@fullpage/react-fullpage'
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import Welcome from './Welcome/Welcome'
 import We from './We/We'
@@ -10,6 +9,7 @@ import Impressions from './Impressions/Impressions'
 import Location from './Location/Location'
 import Values from './Values/Values'
 import Team from './Team/Team'
+import News from './News/News'
 import Footer from '../../Components/Footer/Footer'
 
 import './Home.scss'
@@ -21,14 +21,15 @@ const Home = () => (
     render={({ state, fullpageApi }) => {
       return (
         <ReactFullpage.Wrapper>
-          <Welcome />
+          {/* <Welcome />
           <We />
           <ForYou />
           <How />
           <Impressions />
           <Location />
           <Values />
-          <Team />
+          <Team /> */}
+          <News />
           <Footer />
         </ReactFullpage.Wrapper>
       )

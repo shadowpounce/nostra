@@ -32,7 +32,7 @@ const We = () => {
     <section className={`section ${styles.we}`} id="s-2">
       <div className="container">
         <div className="full-flex-row">
-          <h2>We</h2>
+          <h2>WE</h2>
           <svg
             className="arrow"
             width="42"

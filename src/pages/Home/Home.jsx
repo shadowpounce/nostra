@@ -7,15 +7,17 @@ import We from './We/We'
 import ForYou from './ForYou/ForYou'
 import How from './How/How'
 import Impressions from './Impressions/Impressions'
+import Location from './Location/Location'
+import Values from './Values/Values'
+import Team from './Team/Team'
 import Footer from '../../Components/Footer/Footer'
 
 import './Home.scss'
 
 const Home = () => (
   <ReactFullpage
-    //fullpage options
     licenseKey={'YOUR_KEY_HERE'}
-    scrollingSpeed={850} /* Options here */
+    scrollingSpeed={850}
     render={({ state, fullpageApi }) => {
       return (
         <ReactFullpage.Wrapper>
@@ -24,6 +26,9 @@ const Home = () => (
           <ForYou />
           <How />
           <Impressions />
+          <Location />
+          <Values />
+          <Team />
           <Footer />
         </ReactFullpage.Wrapper>
       )

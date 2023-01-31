@@ -1,0 +1,54 @@
+.location {
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    background: linear-gradient(
+      30.78deg,
+      #c07a92 19.16%,
+      #993962 41.17%,
+      #3c1046 59.12%
+    );
+    opacity: 0.15;
+    filter: blur(75px);
+    transform: rotate(57.37deg);
+    width: 450px;
+    height: 720px;
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+
+  .container {
+    padding: 15px 65px;
+
+    h3 {
+      color: #f7f7f7;
+      text-transform: uppercase;
+    }
+
+    .line {
+      margin: 45px 0;
+    }
+
+    .wrapper {
+      padding: 0 25px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .map {
+      }
+
+      .text {
+        padding-top: 35px;
+        max-width: 375px;
+
+        h4 {
+          margin-top: 15px;
+          text-transform: capitalize !important;
+        }
+      }
+    }
+  }
+}

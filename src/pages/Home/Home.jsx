@@ -21,14 +21,14 @@ const Home = () => (
     render={({ state, fullpageApi }) => {
       return (
         <ReactFullpage.Wrapper>
-          {/* <Welcome />
+          <Welcome />
           <We />
           <ForYou />
           <How />
           <Impressions />
           <Location />
           <Values />
-          <Team /> */}
+          <Team />
           <News />
           <Footer />
         </ReactFullpage.Wrapper>

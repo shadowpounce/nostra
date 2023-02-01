@@ -67,11 +67,18 @@ const Team = () => {
                 social immersion to lead the way to convoy people together in an
                 innovative, new digital world.
               </p>
-              <img
-                src={member.img}
-                alt={member.name}
-                className={styles.memberPhoto}
-              />
+              <picture>
+                <source
+                  srcSet={member.img.webp}
+                  className={styles.memberPhoto}
+                  type="image/webp"
+                />
+                <img
+                  src={member.img.png}
+                  alt={member.name}
+                  className={styles.memberPhoto}
+                />
+              </picture>
               <span className="label">{member.role}</span>
               <h3>{member.name}</h3>
             </div>

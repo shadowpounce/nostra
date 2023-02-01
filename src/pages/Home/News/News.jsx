@@ -199,7 +199,14 @@ const News = () => {
               <p className={styles.newsNumber}>0{idx + 1}</p>
               <h3>{item.title}</h3>
               <p className={styles.newsText}>{item.text}</p>
-              <img src={item.img} className={styles.newsPicture} alt="" />
+              <picture>
+                <source
+                  srcSet={item.img.webp}
+                  className={styles.newsPicture}
+                  type="image/webp"
+                />
+                <img src={item.img.png} className={styles.newsPicture} alt="" />
+              </picture>
               <p className={styles.newsLabel}>{item.label}</p>
             </SwiperSlide>
           ))}

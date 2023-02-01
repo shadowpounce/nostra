@@ -10,10 +10,46 @@ import Img4 from './assets/4.png'
 import Img5 from './assets/5.png'
 import Img6 from './assets/6.png'
 import Img7 from './assets/7.png'
+import Img1W from './assets/1.webp'
+import Img2W from './assets/2.webp'
+import Img3W from './assets/3.webp'
+import Img4W from './assets/4.webp'
+import Img5W from './assets/5.webp'
+import Img6W from './assets/6.webp'
+import Img7W from './assets/7.webp'
 
 import RGB from './assets/rgb.svg'
 
-const carouselItemsData = [Img1, Img2, Img3, Img4, Img5, Img6, Img7]
+const carouselItemsData = [
+  {
+    png: Img1,
+    webp: Img1W,
+  },
+  {
+    png: Img2,
+    webp: Img2W,
+  },
+  {
+    png: Img3,
+    webp: Img3W,
+  },
+  {
+    png: Img4,
+    webp: Img4W,
+  },
+  {
+    png: Img5,
+    webp: Img5W,
+  },
+  {
+    png: Img6,
+    webp: Img6W,
+  },
+  {
+    png: Img7,
+    webp: Img7W,
+  },
+]
 
 import downloadIcon from './assets/download.svg'
 
@@ -21,10 +57,6 @@ const Impressions = () => {
   const [swiper, setSwiper] = useState('')
   const [activeSlide, setActiveSlide] = useState(4)
   const swiperRef = useRef()
-
-  //   useEffect(() => {
-  //     console.log(swiper)
-  //   }, [swiper])
 
   return (
     <section id="s-5" className={`section ${styles.impressions}`}>
@@ -39,7 +71,6 @@ const Impressions = () => {
           spaceBetween={50}
           slidesPerView={3}
           onSlideChange={(swiper) => {
-            console.log(swiper.activeIndex)
             setActiveSlide(swiper.activeIndex)
           }}
           onSwiper={(swiper) => {
@@ -55,7 +86,10 @@ const Impressions = () => {
               }`}
               key={idx}
             >
-              <img src={item} alt="" />
+              <picture>
+                <source srcSet={item.webp} type="image/webp" />
+                <img src={item.png} alt="" />
+              </picture>
             </SwiperSlide>
           ))}
         </Swiper>

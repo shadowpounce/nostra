@@ -53,7 +53,14 @@ const We = () => {
         <div className={styles.cards}>
           <div className={styles.card}>
             <div className={styles.cardHead}>
-              <img className={styles.cardImg} src={cardImg01} alt="" />
+              <picture>
+                <source
+                  className={styles.cardImg}
+                  srcSet={cardImg01W}
+                  type="image/webp"
+                />
+                <img className={styles.cardImg} src={cardImg01} alt="" />
+              </picture>
               <p className={styles.cardNum}>01</p>
             </div>
             <div className={styles.cardBody}>
@@ -64,7 +71,14 @@ const We = () => {
           </div>
           <div className={styles.card}>
             <div className={styles.cardHead}>
-              <img className={styles.cardImg} src={cardImg02} alt="" />
+              <picture>
+                <source
+                  className={styles.cardImg}
+                  srcSet={cardImg02W}
+                  type="image/webp"
+                />
+                <img className={styles.cardImg} src={cardImg02} alt="" />
+              </picture>
               <p className={styles.cardNum}>02</p>
             </div>
             <div className={styles.cardBody}>
@@ -78,7 +92,14 @@ const We = () => {
           </div>
           <div className={styles.card}>
             <div className={styles.cardHead}>
-              <img className={styles.cardImg} src={cardImg03} alt="" />
+              <picture>
+                <source
+                  className={styles.cardImg}
+                  srcSet={cardImg03W}
+                  type="image/webp"
+                />
+                <img className={styles.cardImg} src={cardImg03} alt="" />
+              </picture>
               <p className={styles.cardNum}>03</p>
             </div>
             <div className={styles.cardBody}>

@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './How.module.scss'
 
 import ImgOne from './assets/1.png'
+import ImgOneW from './assets/1.webp'
 
 const How = () => {
   return (
@@ -11,47 +12,74 @@ const How = () => {
         <div className={styles.wrap}>
           <div className={styles.row}>
             <div className={styles.title}>
-              <img src={ImgOne} alt="" />
+              <picture>
+                <source srcSet={ImgOneW} type="image/webp" />
+                <img src={ImgOne} alt="" />
+              </picture>
               <h4>3d Objects Management</h4>
             </div>
             <div className={styles.title}>
-              <img src={ImgOne} alt="" />
+              <picture>
+                <source srcSet={ImgOneW} type="image/webp" />
+                <img src={ImgOne} alt="" />
+              </picture>
               <h4>3d Sound</h4>
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.title}>
-              <img src={ImgOne} alt="" />
+              <picture>
+                <source srcSet={ImgOneW} type="image/webp" />
+                <img src={ImgOne} alt="" />
+              </picture>
               <h4>Full Integrated Individual Avatar System</h4>
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.title}>
-              <img src={ImgOne} alt="" />
+              <picture>
+                <source srcSet={ImgOneW} type="image/webp" />
+                <img src={ImgOne} alt="" />
+              </picture>
               <h4>Gravity Motion</h4>
             </div>
             <div className={styles.title}>
-              <img src={ImgOne} alt="" />
+              <picture>
+                <source srcSet={ImgOneW} type="image/webp" />
+                <img src={ImgOne} alt="" />
+              </picture>
               <h4>Public & Private Rooms</h4>
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.title}>
-              <img src={ImgOne} alt="" />
+              <picture>
+                <source srcSet={ImgOneW} type="image/webp" />
+                <img src={ImgOne} alt="" />
+              </picture>
               <h4>Import Media Files</h4>
             </div>
             <div className={styles.title}>
-              <img src={ImgOne} alt="" />
+              <picture>
+                <source srcSet={ImgOneW} type="image/webp" />
+                <img src={ImgOne} alt="" />
+              </picture>
               <h4>Multiple Room</h4>
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.title}>
-              <img src={ImgOne} alt="" />
+              <picture>
+                <source srcSet={ImgOneW} type="image/webp" />
+                <img src={ImgOne} alt="" />
+              </picture>
               <h4>Configutations</h4>
             </div>
             <div className={styles.title}>
-              <img src={ImgOne} alt="" />
+              <picture>
+                <source srcSet={ImgOneW} type="image/webp" />
+                <img src={ImgOne} alt="" />
+              </picture>
               <h4>Up to 24 Users Per Room</h4>
             </div>
           </div>

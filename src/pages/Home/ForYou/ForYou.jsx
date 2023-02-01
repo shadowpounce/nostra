@@ -1,5 +1,5 @@
 import React from 'react'
-
+import casesData from './casesData'
 import { useState, useEffect } from 'react'
 
 import styles from './ForYou.module.scss'
@@ -46,310 +46,49 @@ const ForYou = () => {
       <div className={`container ${styles.container}`}>
         <h3>For You</h3>
         <div className={styles.cases}>
-          <div className={styles.case}>
-            <div className={styles.caseHead}>
-              <span>/01</span>
-              <div>
-                <small>Digital Twins</small>
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
-                    stroke="white"
-                    strokeWidth="1.77273"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div className={styles.caseBody}>
-              <div className={styles.wrap}>
-                <h4>digital twins</h4>
-                <img src={Img1} alt="" className={styles.image} />
+          {casesData.map((item, idx) => (
+            <div key={idx} className={styles.case}>
+              <div className={styles.caseHead}>
+                <span>/0{idx + 1}</span>
                 <div>
-                  <a href="">
-                    <p>Download PDF</p>
-                  </a>
-                  <p>
-                    Nostra aims to constantly set new standards and to
-                    facilitate social immersion to lead the way to convoy people
-                    together in an innovative, new digital world.
-                  </p>
+                  <small>{item.title}</small>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
+                      stroke="white"
+                      strokeWidth="1.77273"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className={styles.caseBody}>
+                <div className={styles.wrap}>
+                  <h4>{item.title}</h4>
+                  <picture>
+                    <source
+                      className={styles.image}
+                      srcSet={item.img.webp}
+                      type="image/webp"
+                    />
+                    <img src={item.img.png} alt="" className={styles.image} />
+                  </picture>
+                  <div>
+                    <a href="">
+                      <p>Download PDF</p>
+                    </a>
+                    <p>{item.text}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className={styles.case}>
-            <div className={styles.caseHead}>
-              <span>/01</span>
-              <div>
-                <small>Digital Twins</small>
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
-                    stroke="white"
-                    strokeWidth="1.77273"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div className={styles.caseBody}>
-              <div className={styles.wrap}>
-                <h4>digital twins</h4>
-                <img src={Img1} alt="" className={styles.image} />
-                <div>
-                  <a href="">
-                    <p>Download PDF</p>
-                  </a>
-                  <p>
-                    Nostra aims to constantly set new standards and to
-                    facilitate social immersion to lead the way to convoy people
-                    together in an innovative, new digital world.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div className={styles.caseHead}>
-              <span>/01</span>
-              <div>
-                <small>Digital Twins</small>
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
-                    stroke="white"
-                    strokeWidth="1.77273"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div className={styles.caseBody}>
-              <div className={styles.wrap}>
-                <h4>digital twins</h4>
-                <img src={Img1} alt="" className={styles.image} />
-                <div>
-                  <a href="">
-                    <p>Download PDF</p>
-                  </a>
-                  <p>
-                    Nostra aims to constantly set new standards and to
-                    facilitate social immersion to lead the way to convoy people
-                    together in an innovative, new digital world.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div className={styles.caseHead}>
-              <span>/01</span>
-              <div>
-                <small>Digital Twins</small>
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
-                    stroke="white"
-                    strokeWidth="1.77273"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div className={styles.caseBody}>
-              <div className={styles.wrap}>
-                <h4>digital twins</h4>
-                <img src={Img1} alt="" className={styles.image} />
-                <div>
-                  <a href="">
-                    <p>Download PDF</p>
-                  </a>
-                  <p>
-                    Nostra aims to constantly set new standards and to
-                    facilitate social immersion to lead the way to convoy people
-                    together in an innovative, new digital world.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div className={styles.caseHead}>
-              <span>/01</span>
-              <div>
-                <small>Digital Twins</small>
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
-                    stroke="white"
-                    strokeWidth="1.77273"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div className={styles.caseBody}>
-              <div className={styles.wrap}>
-                <h4>digital twins</h4>
-                <img src={Img1} alt="" className={styles.image} />
-                <div>
-                  <a href="">
-                    <p>Download PDF</p>
-                  </a>
-                  <p>
-                    Nostra aims to constantly set new standards and to
-                    facilitate social immersion to lead the way to convoy people
-                    together in an innovative, new digital world.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div className={styles.caseHead}>
-              <span>/01</span>
-              <div>
-                <small>Digital Twins</small>
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
-                    stroke="white"
-                    strokeWidth="1.77273"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div className={styles.caseBody}>
-              <div className={styles.wrap}>
-                <h4>digital twins</h4>
-                <img src={Img1} alt="" className={styles.image} />
-                <div>
-                  <a href="">
-                    <p>Download PDF</p>
-                  </a>
-                  <p>
-                    Nostra aims to constantly set new standards and to
-                    facilitate social immersion to lead the way to convoy people
-                    together in an innovative, new digital world.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div className={styles.caseHead}>
-              <span>/01</span>
-              <div>
-                <small>Digital Twins</small>
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
-                    stroke="white"
-                    strokeWidth="1.77273"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div className={styles.caseBody}>
-              <div className={styles.wrap}>
-                <h4>digital twins</h4>
-                <img src={Img1} alt="" className={styles.image} />
-                <div>
-                  <a href="">
-                    <p>Download PDF</p>
-                  </a>
-                  <p>
-                    Nostra aims to constantly set new standards and to
-                    facilitate social immersion to lead the way to convoy people
-                    together in an innovative, new digital world.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div className={styles.caseHead}>
-              <span>/01</span>
-              <div>
-                <small>Digital Twins</small>
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.9998 14L0.999756 1M0.999756 1L9.86339 1M0.999756 1L0.999756 9.86364"
-                    stroke="white"
-                    strokeWidth="1.77273"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div className={styles.caseBody}>
-              <div className={styles.wrap}>
-                <h4>digital twins</h4>
-                <img src={Img1} alt="" className={styles.image} />
-                <div>
-                  <a href="">
-                    <p>Download PDF</p>
-                  </a>
-                  <p>
-                    Nostra aims to constantly set new standards and to
-                    facilitate social immersion to lead the way to convoy people
-                    together in an innovative, new digital world.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

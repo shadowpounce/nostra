@@ -58,14 +58,26 @@
   }
 
   .valuesBody {
-    overflow: hidden;
-    background: #f5f5f5;
     padding: 150px 0 50px;
-    width: 150%;
     display: flex;
     justify-content: start;
     gap: 23px;
-    clip-path: url(#values-clip);
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 175%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      pointer-events: none;
+      z-index: -1;
+      background: #f5f5f5;
+      clip-path: url(#values-clip);
+    }
 
     .value {
       background: #000000;

@@ -30,7 +30,7 @@ const Team = () => {
             filterUnits="userSpaceOnUse"
             colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -60,8 +60,8 @@ const Team = () => {
       <div className={styles.container}>
         <h4>Our team</h4>
         <div className={styles.teamItems}>
-          {teamData.map((member) => (
-            <div className={styles.teamItem}>
+          {teamData.map((member, idx) => (
+            <div key={idx} className={styles.teamItem}>
               <p>
                 Nostra aims to constantly set new standards and to facilitate
                 social immersion to lead the way to convoy people together in an

@@ -1,4 +1,12 @@
 .news {
+  position: relative;
+  .svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+  }
+
   .newsHead {
     display: flex;
     align-items: center;
@@ -39,6 +47,7 @@
 
   .newsBody {
     height: 80vh;
+    overflow: hidden;
     border-top: 1px solid rgb(255, 255, 255, 0.3);
     border-bottom: 1px solid rgb(255, 255, 255, 0.3);
     display: flex;
@@ -107,7 +116,7 @@
           border-radius: 50%;
           cursor: pointer;
 
-          &.active {
+          &:hover {
             opacity: 0.5;
           }
         }

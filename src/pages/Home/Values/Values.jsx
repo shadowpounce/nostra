@@ -1,10 +1,13 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Autoplay } from 'swiper'
 import 'swiper/css'
 import valuesData from './valuesData'
 import styles from './Values.module.scss'
 
 const Values = () => {
+  SwiperCore.use([Autoplay])
+
   return (
     <section id="s-7" className={`section ${styles.values}`}>
       <svg className={styles.svg}>
@@ -27,22 +30,28 @@ const Values = () => {
           <button>Start now</button>
         </div>
       </div>
-      <div className={styles.valuesBody}>
+      <Swiper
+        loop={true}
+        // autoplay={true}
+        slidesPerView={5}
+        spaceBetween={25}
+        className={styles.valuesBody}
+      >
         {valuesData.map((value, idx) => (
-          <div key={idx} className={styles.value}>
+          <SwiperSlide loopedSlides={100} key={idx} className={styles.value}>
             <img src={value.img} alt="" />
             <div className={styles.head}>
               <h6>values</h6>
               <span>{value.span}</span>
             </div>
             <div className={styles.body}>
-              <small>01</small>
+              <small>0{idx + 1}</small>
               <h6>{value.title}</h6>
               <p>{value.body}</p>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </section>
   )
 }

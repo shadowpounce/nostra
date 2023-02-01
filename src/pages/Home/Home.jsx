@@ -10,6 +10,7 @@ import Location from './Location/Location'
 import Values from './Values/Values'
 import Team from './Team/Team'
 import News from './News/News'
+import Hiring from './Hiring/Hiring'
 import Footer from '../../Components/Footer/Footer'
 
 import './Home.scss'
@@ -30,6 +31,7 @@ const Home = () => (
           <Values />
           <Team />
           <News />
+          <Hiring />
           <Footer />
         </ReactFullpage.Wrapper>
       )

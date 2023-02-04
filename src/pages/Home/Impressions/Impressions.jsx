@@ -53,18 +53,28 @@ const carouselItemsData = [
 
 import downloadIcon from './assets/download.svg'
 
-const Impressions = () => {
+const Impressions = ({ sectionImpression }) => {
   const [swiper, setSwiper] = useState('')
-  const [activeSlide, setActiveSlide] = useState(4)
+  const [activeSlide, setActiveSlide] = useState(0)
   const swiperRef = useRef()
+
+  useEffect(() => {
+    if (swiper !== '') {
+      if (sectionImpression) {
+        swiper.slideTo(4, 1500)
+      } else {
+        swiper.slideTo(0, 1500)
+      }
+    }
+  }, [sectionImpression])
 
   return (
     <section id="s-5" className={`section ${styles.impressions}`}>
       <img src={RGB} alt="rgb" className={styles.rgb} />
-
       <div className={styles.container}>
         <h4>Impressions</h4>
         <Swiper
+          speed={500}
           centeredSlides={true}
           ref={swiperRef}
           className={styles.impressionsCarousel}
@@ -81,7 +91,7 @@ const Impressions = () => {
           {carouselItemsData.map((item, idx) => (
             <SwiperSlide
               id={idx}
-              className={`${styles.carouselItem} ${
+              className={`impression ${styles.carouselItem} ${
                 activeSlide === idx ? `${styles.active}` : ''
               }`}
               key={idx}

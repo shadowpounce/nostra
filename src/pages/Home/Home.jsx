@@ -17,6 +17,7 @@ import './Home.scss'
 
 const Home = () => {
   const [sectionForYou, setSectionForYou] = useState(false)
+  const [sectionImpression, setSectionImpression] = useState(false)
 
   return (
     <ReactFullpage
@@ -29,6 +30,11 @@ const Home = () => {
         } else {
           setSectionForYou(false)
         }
+        if (sec.id === 's-4' || sec.id === 's-6') {
+          setSectionImpression(true)
+        } else {
+          setSectionImpression(false)
+        }
       }}
       render={({ state, fullpageApi }) => {
         return (
@@ -37,7 +43,7 @@ const Home = () => {
             <We />
             <ForYou sectionForYou={sectionForYou} />
             <How />
-            <Impressions />
+            <Impressions sectionImpression={sectionImpression} />
             <Location />
             <Values />
             <Team />

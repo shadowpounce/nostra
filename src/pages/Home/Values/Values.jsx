@@ -32,13 +32,13 @@ const Values = () => {
       </div>
       <Swiper
         loop={true}
-        // autoplay={true}
+        loopedslides="true"
         slidesPerView={5}
         spaceBetween={25}
         className={styles.valuesBody}
       >
         {valuesData.map((value, idx) => (
-          <SwiperSlide loopedSlides={100} key={idx} className={styles.value}>
+          <SwiperSlide key={idx} className={styles.value}>
             <img src={value.img} alt="" />
             <div className={styles.head}>
               <h6>values</h6>

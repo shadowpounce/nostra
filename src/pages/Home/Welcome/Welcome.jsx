@@ -6,7 +6,7 @@ import styles from './Welcome.module.scss'
 
 const Welcome = () => {
   return (
-    <section className={`section ${styles.welcome}`} id="s-1">
+    <section className={`section s-1 ${styles.welcome}`} id="s-1">
       <Header />
       <div className={styles.block}>
         <span className="label">metaverse for businesses</span>
@@ -32,7 +32,7 @@ const Welcome = () => {
           </Link>
         </h1>
       </div>
-      <div className={styles.scrollLabel}>
+      <div className={`scroll-label ${styles.scrollLabel}`}>
         <svg
           width="16"
           height="19"
@@ -50,6 +50,7 @@ const Welcome = () => {
             strokeWidth="0.890624"
           />
           <path
+            id="scrollPath"
             d="M7.71875 3.5625V10.0937"
             stroke="white"
             strokeWidth="0.890624"

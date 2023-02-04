@@ -50,8 +50,8 @@ const We = () => {
           </svg>
         </div>
         <div className={`line ${styles.line}`}></div>
-        <div className={styles.cards}>
-          <div className={styles.card}>
+        <div className={`cards ${styles.cards}`}>
+          <div className={`card ${styles.card}`}>
             <div className={styles.cardHead}>
               <picture>
                 <source
@@ -69,7 +69,7 @@ const We = () => {
               <p>A POS DAO designed to safeguard meritocracy in GameFi</p>
             </div>
           </div>
-          <div className={styles.card}>
+          <div className={`card ${styles.card}`}>
             <div className={styles.cardHead}>
               <picture>
                 <source
@@ -90,7 +90,7 @@ const We = () => {
               </p>
             </div>
           </div>
-          <div className={styles.card}>
+          <div className={`card ${styles.card}`}>
             <div className={styles.cardHead}>
               <picture>
                 <source

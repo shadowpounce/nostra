@@ -22,7 +22,8 @@
   .container {
     padding: 60px 0 5px;
     position: relative;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
 
     > h3 {
       position: absolute;
@@ -41,14 +42,63 @@
       .case {
         height: 100%;
         display: flex;
+        transition: all 1s ease;
+
+        &.active {
+          .caseHead {
+            border-color: rgb(0, 0, 0, 0);
+
+            .caseHeadInfo {
+              opacity: 0;
+            }
+
+            &::before {
+              opacity: 0;
+            }
+
+            span {
+              scale: 1.2;
+              color: #ffffff;
+            }
+          }
+
+          .caseBody {
+            opacity: 1;
+
+            h4 {
+              animation: fadeInLeft 1s forwards ease 0.7s !important;
+            }
+
+            .image {
+              animation: fadeInScale 1s forwards ease 0.2s !important;
+            }
+
+            .bodyInfo {
+              animation: fadeInBottom 1s forwards ease 0.7s;
+            }
+          }
+        }
 
         .caseBody {
-          padding: 0 0 0 100px;
-          display: none;
+          width: 0px;
+          transition: 1.5s ease;
+          transition-property: width, opacity;
+          position: relative;
+
+          .bodyInfo {
+            opacity: 0;
+            transform: translate(0, 100px);
+            animation: fadeOutBottom 0.25s forwards ease;
+          }
 
           .wrap {
             max-width: 475px;
-            width: 100%;
+            // width: 475px;
+            margin: 0 0 0 100px;
+            // left: 100px;
+            // top: 0;
+            // position: absolute;
+            transition: width 10s ease;
 
             div {
               padding-top: 15px;
@@ -76,12 +126,22 @@
               width: 100%;
               position: relative;
               bottom: -40px;
+              z-index: 123;
+              opacity: 0;
+              transform: translate(-100px, 0);
+              animation: fadeOutLeft 0.5s forwards ease;
             }
 
             .image {
               width: 100%;
               height: 350px;
               object-fit: cover;
+              opacity: 0;
+              transform-origin: center;
+              transition: transform 0.5s ease;
+              transform: scale(0.5);
+
+              animation: fadeOutScale 0.5s forwards ease;
             }
           }
         }
@@ -89,14 +149,17 @@
         .caseHead {
           border: 1.5px solid #0d0d0e;
           height: 100%;
-          background: linear-gradient(24.08deg, #181818 11.62%, #000000 99.48%);
+
           width: 90px;
           padding: 60px 0 50px;
           display: flex;
           flex-direction: column-reverse;
           align-items: center;
           justify-content: space-between;
+          position: relative;
           transform: matrix(1, 0, 0, -1, 0, 0);
+
+          transition: all 1s ease;
 
           font-weight: 400;
           font-size: 18px;
@@ -104,7 +167,29 @@
           text-align: center;
           color: rgb(255, 255, 255, 0.4);
 
+          &::before {
+            content: '';
+            display: block;
+            background: linear-gradient(
+              24.08deg,
+              #181818 11.62%,
+              #000000 99.48%
+            );
+            opacity: 1;
+            transition: opacity 1s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+          }
+
+          .caseHeadInfo {
+            transition: opacity 0.7s ease;
+          }
+
           span {
+            transition: all 0.5s ease;
             transform: matrix(1, 0, 0, -1, 0, 0);
           }
 
@@ -126,5 +211,77 @@
         }
       }
     }
+  }
+}
+
+@keyframes fadeOutBottom {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(0, 100px);
+  }
+}
+
+@keyframes fadeInBottom {
+  from {
+    transform: translate(0, 100px);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translate(200px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutLeft {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(200px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOutScale {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0.5);
+    opacity: 0;
   }
 }

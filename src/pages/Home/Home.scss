@@ -1,9 +1,79 @@
+@import '../../assets/styles/animations.scss';
+
 #s-1 {
   .fp-overflow {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &.fp-completely {
+    h1 {
+      animation: fadeInUp 1s forwards ease;
+    }
+
+    header {
+      animation: fadeInDown 1s forwards ease 0.3s;
+    }
+
+    .scroll-label {
+      animation: fadeInDown 1s forwards ease 0.3s;
+    }
+
+    #scrollPath {
+      animation: slideInUp 1s forwards ease;
+    }
+  }
+}
+
+#s-2 {
+  .full-flex-row {
+    opacity: 0;
+  }
+
+  &.fp-completely {
+    .full-flex-row {
+      animation: fadeInDown 1s forwards ease;
+    }
+
+    .cards {
+      .card:first-child {
+        animation: fadeInRight 1.5s forwards ease;
+      }
+      .card:nth-child(2) {
+        animation: fadeInRight 1.5s forwards ease 0.2s;
+      }
+      .card:last-child {
+        animation: fadeInRight 1.5s forwards ease 0.4s;
+      }
+    }
+  }
+}
+
+#s-4 {
+  &.fp-completely {
+    h3 {
+      animation: fadeInDown 1s forwards ease;
+    }
+
+    .name {
+      opacity: 1;
+    }
+  }
+}
+
+section.fp-completely {
+  .label {
+    animation: fadeInDown 1s forwards ease;
+  }
+
+  .line {
+    width: 100%;
+  }
+
+  .arrow {
+    animation: rotateInDownLeft 1.25s forwards ease;
   }
 }
 

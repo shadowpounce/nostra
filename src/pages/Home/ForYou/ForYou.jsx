@@ -3,10 +3,10 @@ import casesData from './casesData'
 import { useState, useEffect } from 'react'
 
 import styles from './ForYou.module.scss'
-import Img1 from './assets/1.png'
 
-const ForYou = () => {
-  const [activeCaseID, setActiveCaseID] = useState(0)
+const ForYou = ({ sectionForYou }) => {
+  const [activeCaseID, setActiveCaseID] = useState(undefined)
+  const [caseBodyW, setCaseBodyW] = useState(0)
 
   useEffect(() => {
     const caseHeads = document.querySelectorAll(`.${styles.caseHead}`)
@@ -15,31 +15,47 @@ const ForYou = () => {
     const casesWidth = caseWidth * cases
     const casesArr = Array.from(caseHeads)
     const caseBodyWidth = document.body.clientWidth - casesWidth
+    setCaseBodyW(caseBodyWidth)
 
     casesArr.forEach((el, idx) => {
-      el.addEventListener('click', (e) => {
-        const id = casesArr.indexOf(el)
-        setActiveCaseID(id)
-      })
       el.querySelector('span').innerHTML = `/0${idx + 1}`
     })
-
-    document
-      .querySelectorAll(`.${styles.caseBody}`)
-      .forEach((body) => (body.style.width = `${caseBodyWidth}px`))
   }, [])
 
   useEffect(() => {
-    const cases = document.querySelectorAll(`.${styles.case}`)
+    if (sectionForYou) {
+      setActiveCaseID(0)
+    } else {
+      setActiveCaseID(undefined)
+      document.querySelectorAll(`.${styles.case}`).forEach((el) => {
+        el.classList.remove(`${styles.active}`)
+        el.querySelector(`.${styles.caseBody}`).style.width = `0px`
+      })
+    }
+  }, [sectionForYou])
 
-    cases.forEach(
-      (el) => (el.querySelector(`.${styles.caseBody}`).style.display = `none`)
-    )
+  useEffect(() => {
+    if (activeCaseID !== undefined) {
+      const cases = document.querySelectorAll(`.${styles.case}`)
 
-    cases[activeCaseID].querySelector(
-      `.${styles.caseBody}`
-    ).style.display = `block`
-  }, [activeCaseID])
+      cases[activeCaseID].classList.add(`${styles.active}`)
+      cases[activeCaseID].querySelector(
+        `.${styles.caseBody}`
+      ).style.width = `${caseBodyW}px`
+    }
+  }, [activeCaseID, caseBodyW])
+
+  const openCase = (e) => {
+    const id = e.target.closest(`.${styles.case}`).id
+    if (activeCaseID !== id) {
+      document.querySelectorAll(`.${styles.case}`).forEach((el) => {
+        el.classList.remove(`${styles.active}`)
+        el.querySelector(`.${styles.caseBody}`).style.width = `0px`
+      })
+
+      setActiveCaseID(id)
+    }
+  }
 
   return (
     <section className={`section ${styles.forYou}`} id="s-3">
@@ -47,10 +63,15 @@ const ForYou = () => {
         <h3>For You</h3>
         <div className={styles.cases}>
           {casesData.map((item, idx) => (
-            <div key={idx} className={styles.case}>
+            <div
+              onClick={(e) => openCase(e)}
+              id={idx}
+              key={idx}
+              className={styles.case}
+            >
               <div className={styles.caseHead}>
                 <span>/0{idx + 1}</span>
-                <div>
+                <div className={`${styles.caseHeadInfo}`}>
                   <small>{item.title}</small>
                   <svg
                     width="15"
@@ -79,7 +100,7 @@ const ForYou = () => {
                     />
                     <img src={item.img.png} alt="" className={styles.image} />
                   </picture>
-                  <div>
+                  <div className={styles.bodyInfo}>
                     <a href="">
                       <p>Download PDF</p>
                     </a>

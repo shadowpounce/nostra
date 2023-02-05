@@ -21,8 +21,12 @@ const Home = () => {
   const sectionImpressionActive = useSectionsStore(
     (state) => state.setImpression
   )
+  const sectionValuesActive = useSectionsStore((state) => state.setValues)
   const setDirectionImpression = useSectionsStore(
     (state) => state.setDirectionImpression
+  )
+  const setDirectionValues = useSectionsStore(
+    (state) => state.setDirectionValues
   )
 
   return (
@@ -43,6 +47,14 @@ const Home = () => {
             ? setDirectionImpression('down')
             : setDirectionImpression('up')
           sectionImpressionActive(false)
+        }
+        if (sec.id === 's-5' || sec.id === 's-7') {
+          sectionValuesActive(true)
+        } else {
+          direction === 'down'
+            ? setDirectionValues('down')
+            : setDirectionValues('up')
+          sectionValuesActive(false)
         }
       }}
       render={({ state, fullpageApi }) => {

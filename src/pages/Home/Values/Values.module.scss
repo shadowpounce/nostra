@@ -59,6 +59,10 @@
     pointer-events: none;
   }
 
+  // div[class='swiper-wrapper'] {
+  //   animation: runningText 10s linear infinite;
+  // }
+
   .valuesBody {
     padding: 150px 0 50px;
     display: flex;
@@ -152,5 +156,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes runningText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }

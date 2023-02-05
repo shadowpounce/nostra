@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import useSectionsStore from '../../../store'
 import 'swiper/css'
 import styles from './Impressions.module.scss'
 import Img1 from './assets/1.png'
@@ -53,20 +54,30 @@ const carouselItemsData = [
 
 import downloadIcon from './assets/download.svg'
 
-const Impressions = ({ sectionImpression }) => {
+const Impressions = () => {
   const [swiper, setSwiper] = useState('')
   const [activeSlide, setActiveSlide] = useState(0)
   const swiperRef = useRef()
 
+  const sectionActive = useSectionsStore((state) => state.impression)
+  const leavingDirection = useSectionsStore(
+    (state) => state.leavingImpressionDirection
+  )
+
   useEffect(() => {
     if (swiper !== '') {
-      if (sectionImpression) {
+      if (sectionActive) {
         swiper.slideTo(4, 1500)
       } else {
-        swiper.slideTo(0, 1500)
+        if (leavingDirection === 'up') {
+          swiper.slideTo(0, 1500)
+        }
+        if (leavingDirection === 'down') {
+          swiper.slideTo(7, 1500)
+        }
       }
     }
-  }, [sectionImpression])
+  }, [sectionActive])
 
   return (
     <section id="s-5" className={`section ${styles.impressions}`}>

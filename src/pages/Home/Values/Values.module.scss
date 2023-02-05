@@ -88,6 +88,8 @@
       line-height: 119%;
       color: #ffffff;
       position: relative;
+      user-select: none;
+      -webkit-user-drag: none;
 
       img {
         position: absolute;

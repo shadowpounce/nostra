@@ -35,6 +35,7 @@ const Values = () => {
         loopedslides="true"
         slidesPerView={5}
         spaceBetween={25}
+        speed={250}
         className={styles.valuesBody}
       >
         {valuesData.map((value, idx) => (

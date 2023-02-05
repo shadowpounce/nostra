@@ -1,12 +1,14 @@
 import React from 'react'
 import casesData from './casesData'
 import { useState, useEffect } from 'react'
-
+import useSectionsStore from '../../../store'
 import styles from './ForYou.module.scss'
 
 const ForYou = ({ sectionForYou }) => {
   const [activeCaseID, setActiveCaseID] = useState(undefined)
   const [caseBodyW, setCaseBodyW] = useState(0)
+
+  const sectionActive = useSectionsStore((state) => state.forYou)
 
   useEffect(() => {
     const caseHeads = document.querySelectorAll(`.${styles.caseHead}`)
@@ -23,7 +25,7 @@ const ForYou = ({ sectionForYou }) => {
   }, [])
 
   useEffect(() => {
-    if (sectionForYou) {
+    if (sectionActive) {
       setActiveCaseID(0)
     } else {
       setActiveCaseID(undefined)
@@ -32,7 +34,7 @@ const ForYou = ({ sectionForYou }) => {
         el.querySelector(`.${styles.caseBody}`).style.width = `0px`
       })
     }
-  }, [sectionForYou])
+  }, [sectionActive])
 
   useEffect(() => {
     if (activeCaseID !== undefined) {

@@ -1,6 +1,7 @@
 import ReactFullpage from '@fullpage/react-fullpage'
 import React from 'react'
 import { useState, useEffect } from 'react'
+import useSectionsStore from '../../store'
 import Welcome from './Welcome/Welcome'
 import We from './We/We'
 import ForYou from './ForYou/ForYou'
@@ -16,8 +17,13 @@ import Footer from '../../Components/Footer/Footer'
 import './Home.scss'
 
 const Home = () => {
-  const [sectionForYou, setSectionForYou] = useState(false)
-  const [sectionImpression, setSectionImpression] = useState(false)
+  const sectionForYouActive = useSectionsStore((state) => state.setForYou)
+  const sectionImpressionActive = useSectionsStore(
+    (state) => state.setImpression
+  )
+  const setDirectionImpression = useSectionsStore(
+    (state) => state.setDirectionImpression
+  )
 
   return (
     <ReactFullpage
@@ -26,14 +32,17 @@ const Home = () => {
       onLeave={(origin, destination, direction, trigger) => {
         const sec = origin.item
         if (sec.id === 's-4' || sec.id === 's-2') {
-          setSectionForYou(true)
+          sectionForYouActive(true)
         } else {
-          setSectionForYou(false)
+          sectionForYouActive(false)
         }
         if (sec.id === 's-4' || sec.id === 's-6') {
-          setSectionImpression(true)
+          sectionImpressionActive(true)
         } else {
-          setSectionImpression(false)
+          direction === 'down'
+            ? setDirectionImpression('down')
+            : setDirectionImpression('up')
+          sectionImpressionActive(false)
         }
       }}
       render={({ state, fullpageApi }) => {
@@ -41,9 +50,9 @@ const Home = () => {
           <ReactFullpage.Wrapper>
             <Welcome />
             <We />
-            <ForYou sectionForYou={sectionForYou} />
+            <ForYou />
             <How />
-            <Impressions sectionImpression={sectionImpression} />
+            <Impressions />
             <Location />
             <Values />
             <Team />

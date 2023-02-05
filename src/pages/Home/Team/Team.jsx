@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './Team.module.scss'
-
 import teamData from './teamData'
+import indexingDelay from '../../../utils/indexingDelay'
 
 const Team = () => {
+  useEffect(() => {
+    const names = document.querySelectorAll(`.${styles.teamItem}`)
+    indexingDelay(names, 'transition')
+  })
+
   return (
-    <section className={`section ${styles.team}`}>
+    <section id="s-8" className={`section ${styles.team}`}>
       <svg
         className={styles.svg}
         width="831"
@@ -61,7 +66,7 @@ const Team = () => {
         <h4>Our team</h4>
         <div className={styles.teamItems}>
           {teamData.map((member, idx) => (
-            <div key={idx} className={styles.teamItem}>
+            <div key={idx} className={`name ${styles.teamItem}`}>
               <p>
                 Nostra aims to constantly set new standards and to facilitate
                 social immersion to lead the way to convoy people together in an

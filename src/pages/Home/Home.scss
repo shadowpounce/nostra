@@ -87,6 +87,71 @@
   }
 }
 
+#s-6 {
+  &.fp-completely {
+    .full-flex-row {
+      animation: fadeInDown 1s forwards ease;
+    }
+
+    h4 {
+      animation: fadeInRight 1.25s forwards ease;
+    }
+
+    .map {
+      scale: 1;
+    }
+
+    div[class='photos'] img {
+      opacity: 1;
+      rotate: 0deg;
+    }
+
+    div[class='white-connections'] {
+      path {
+        opacity: 1;
+        stroke-dasharray: 5;
+      }
+
+      circle {
+        opacity: 1;
+      }
+    }
+
+    .map svg[class='bg-map'] path {
+      animation: fadeInDasharray 1s forwards ease;
+    }
+  }
+}
+
+#s-7 {
+  &.fp-completely {
+    .swiper-values::before {
+      transform: translate(0);
+    }
+
+    h4 {
+      animation: fadeInDown 1s forwards ease 0.7s;
+    }
+
+    .head > div {
+      animation: fadeInDown 1s forwards ease 0.9s;
+    }
+  }
+}
+
+#s-8 {
+  &.fp-completely {
+    .name {
+      opacity: 1;
+      translate: 0;
+    }
+
+    h4 {
+      animation: fadeInDown 1s forwards ease;
+    }
+  }
+}
+
 section.fp-completely {
   .label {
     animation: fadeInDown 1s forwards ease;

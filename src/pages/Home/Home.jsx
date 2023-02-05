@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <ReactFullpage
       licenseKey={'YOUR_KEY_HERE'}
-      scrollingSpeed={850}
+      scrollingSpeed={1000}
       onLeave={(origin, destination, direction, trigger) => {
         const sec = origin.item
         if (sec.id === 's-4' || sec.id === 's-2') {

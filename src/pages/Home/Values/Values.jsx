@@ -15,7 +15,7 @@ const Values = () => {
           <path d="M0,0 V1 H1 L0.792,0.215 L0,0"></path>
         </clipPath>
       </svg>
-      <div className={styles.valuesHead}>
+      <div className={`head ${styles.valuesHead}`}>
         <h4>
           Our
           <br />
@@ -36,7 +36,7 @@ const Values = () => {
         slidesPerView={5}
         spaceBetween={25}
         speed={250}
-        className={styles.valuesBody}
+        className={`swiper-values ${styles.valuesBody}`}
       >
         {valuesData.map((value, idx) => (
           <SwiperSlide key={idx} className={styles.value}>

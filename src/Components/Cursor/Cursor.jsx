@@ -16,7 +16,6 @@ const Cursor = () => {
       } else {
         cursor.classList.remove(`${styles.scale}`)
       }
-
       cursor.style.top = `${y - 25}px`
       cursor.style.left = `${x - 25}px`
     })

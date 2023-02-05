@@ -11,3 +11,14 @@
     opacity: 1;
   }
 }
+
+@keyframes fadeInDasharray {
+  from {
+    stroke-dasharray: 1000 6;
+    stroke: transparent;
+  }
+  to {
+    stroke-dasharray: 6 6;
+    stroke: #2c2c2c;
+  }
+}

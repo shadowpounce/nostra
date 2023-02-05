@@ -19,8 +19,14 @@
     position: absolute;
   }
 
+  div[class='full-flex-row'] {
+    opacity: 0;
+  }
+
   .container {
     padding: 15px 65px;
+    height: 100vh;
+    overflow: hidden;
 
     h3 {
       color: #f7f7f7;
@@ -34,10 +40,103 @@
     .wrapper {
       padding: 0 25px;
       width: 100%;
+      overflow: hidden;
       display: flex;
       justify-content: space-between;
 
       .map {
+        transition: scale 1s ease;
+        transform-origin: center;
+        scale: 0.8;
+        position: relative;
+        width: 70%;
+        justify-content: end;
+
+        div[class='white-connections'] {
+          position: absolute;
+          top: 50%;
+          left: 53%;
+          transform: translate(-50%, -50%);
+
+          div[id='p-1'] {
+            left: 50px;
+          }
+
+          div[id='p-2'] {
+            left: 55px;
+            top: 65px;
+          }
+
+          div[id='p-3'] {
+            left: 0px;
+            top: 165px;
+          }
+
+          div[id='p-4'] {
+            right: -35px;
+            bottom: -20px;
+          }
+
+          div[class='photos'] {
+            width: 80px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+
+            img {
+              width: 40px;
+              height: 40px;
+              transition: all 0.7s ease;
+              rotate: 45deg;
+              opacity: 0;
+            }
+
+            img:nth-child(2) {
+              z-index: 1;
+              translate: -20px;
+              transition-delay: 0.6s;
+            }
+
+            img:last-child {
+              translate: -40px;
+              z-index: 0;
+              transition-delay: 0.7s;
+            }
+
+            img[class='main'] {
+              width: 46px;
+              height: 46px;
+              border-radius: 50%;
+              outline: 1.5px solid #fff;
+              z-index: 2;
+              transition-delay: 0.5s;
+            }
+          }
+
+          path {
+            stroke-dasharray: 50;
+            opacity: 0;
+            transition: 1s ease;
+            transition-property: opacity, stroke-dasharray;
+          }
+
+          circle {
+            opacity: 0;
+            transition: opacity 1s ease;
+          }
+
+          path {
+            transition-delay: 0.3s;
+          }
+        }
+
+        svg[class='bg-map'] path {
+          stroke: transparent;
+          transition: all 5s ease;
+          stroke-dasharray: 0 6;
+        }
       }
 
       .text {
@@ -45,6 +144,7 @@
         max-width: 375px;
 
         h4 {
+          opacity: 0;
           margin-top: 15px;
           text-transform: capitalize !important;
         }

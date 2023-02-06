@@ -13,10 +13,13 @@ import Team from './Team/Team'
 import News from './News/News'
 import Hiring from './Hiring/Hiring'
 import Footer from '../../Components/Footer/Footer'
+import Menu from '../../Components/Menu/Menu'
 
 import './Home.scss'
 
 const Home = () => {
+  const [menuActive, setMenuActive] = useState(false)
+
   const sectionForYouActive = useSectionsStore((state) => state.setForYou)
   const sectionImpressionActive = useSectionsStore(
     (state) => state.setImpression
@@ -34,6 +37,9 @@ const Home = () => {
       licenseKey={'YOUR_KEY_HERE'}
       scrollingSpeed={1000}
       onLeave={(origin, destination, direction, trigger) => {
+        if (menuActive) {
+          return false
+        }
         const sec = origin.item
         if (sec.id === 's-4' || sec.id === 's-2') {
           sectionForYouActive(true)
@@ -60,7 +66,8 @@ const Home = () => {
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
-            <Welcome />
+            <Menu setMenuActive={setMenuActive} menuActive={menuActive} />
+            <Welcome setMenuActive={setMenuActive} menuActive={menuActive} />
             <We />
             <ForYou />
             <How />

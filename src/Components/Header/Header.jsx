@@ -1,8 +1,23 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
 import styles from './Header.module.scss'
 
-const Header = () => {
+const Header = ({ menuActive, setMenuActive }) => {
+  const openMenu = () => {
+    if (menuActive) {
+      setMenuActive(false)
+    } else {
+      setMenuActive(true)
+    }
+  }
+
+  useEffect(() => {
+    const menuButton = document.querySelector(`.${styles.menuButton}`)
+
+    menuActive
+      ? menuButton.classList.add(`${styles.active}`)
+      : menuButton.classList.remove(`${styles.active}`)
+  }, [menuActive])
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -104,7 +119,7 @@ const Header = () => {
             </svg>
           </a>
         </div>
-        <div className={styles.menuButton}>
+        <div onClick={() => openMenu()} className={styles.menuButton}>
           <p>Menu</p>
           <svg
             width="47"
@@ -114,6 +129,7 @@ const Header = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              id="anim-path"
               d="M1 1L46 1"
               stroke="white"
               strokeWidth="1.5"

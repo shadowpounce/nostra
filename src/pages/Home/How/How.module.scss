@@ -13,9 +13,10 @@
       #993962 41.17%,
       #3c1046 59.12%
     );
-    opacity: 0.15;
+    opacity: 0;
     filter: blur(75px);
     transform: rotate(57.37deg);
+    transition: opacity 1s ease;
   }
   .container {
     padding: 0 60px;

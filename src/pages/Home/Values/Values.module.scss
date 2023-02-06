@@ -1,4 +1,25 @@
 .values {
+  position: relative;
+  &::before {
+    content: '';
+    width: 480px;
+    height: 480px;
+    position: absolute;
+    top: 0;
+    right: 100px;
+    border-radius: 50%;
+    background: linear-gradient(
+      39.85deg,
+      #481246 22.11%,
+      #18113d 38.5%,
+      #101125 51.87%
+    );
+    filter: blur(35px);
+    transform: matrix(-0.54, 0.84, 0.84, 0.54, 0, 0);
+    opacity: 0;
+    transition: opacity 0.5s ease 1s;
+  }
+
   .valuesHead {
     display: flex;
     justify-content: space-between;
@@ -58,10 +79,6 @@
     opacity: 0;
     pointer-events: none;
   }
-
-  // div[class='swiper-wrapper'] {
-  //   animation: runningText 10s linear infinite;
-  // }
 
   .valuesBody {
     padding: 150px 0 50px;

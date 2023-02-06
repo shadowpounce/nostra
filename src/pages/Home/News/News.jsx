@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useSwiper } from 'swiper/react'
 import styles from './News.module.scss'
-
+import indexingDelay from '../../../utils/indexingDelay'
 import newsData from './newsData'
 
 const categories = [
@@ -17,8 +17,15 @@ const categories = [
 
 const News = () => {
   const [selectedCategories, setSelectedCategories] = useState(['all'])
-
   const [swiper, setSwiper] = useState(null)
+
+  useEffect(() => {
+    const categories = document.querySelectorAll(`.${styles.category}`)
+    const newsItems = document.querySelectorAll(`.${styles.newsItem}`)
+
+    indexingDelay(newsItems, 'transition')
+    indexingDelay(categories, 'transition')
+  })
 
   const selectCategory = (cat) => {
     if (cat.classList.contains(`${styles.active}`)) {
@@ -33,9 +40,9 @@ const News = () => {
   }
 
   return (
-    <section className={`section ${styles.news}`}>
+    <section id="s-9" className={`section ${styles.news}`}>
       <svg
-        className={styles.svg}
+        className={`svg ${styles.svg}`}
         width="420"
         height="811"
         viewBox="0 0 420 811"
@@ -85,7 +92,7 @@ const News = () => {
         </defs>
       </svg>
 
-      <div className={styles.newsHead}>
+      <div className={`newsHead ${styles.newsHead}`}>
         <h1>What's up</h1>
         <div className={styles.sort}>
           <div className={styles.sortHead}>
@@ -103,7 +110,7 @@ const News = () => {
           <div className={`line ${styles.line}`}></div>
         </div>
       </div>
-      <div className={styles.newsBody}>
+      <div className={`news-body ${styles.newsBody}`}>
         <div className={styles.controlPanel}>
           <span
             className="label"
@@ -118,7 +125,7 @@ const News = () => {
               <div
                 key={cat}
                 data-category={cat}
-                className={`${styles.category} ${
+                className={`category ${styles.category} ${
                   cat === 'all' && `${styles.active}`
                 }`}
                 onClick={(e) =>
@@ -131,10 +138,11 @@ const News = () => {
           </div>
           <div className={styles.arrows}>
             <div
+              id="arrow-right"
               onClick={() => {
                 swiper.slidePrev()
               }}
-              className={styles.arrow}
+              className={`arrow ${styles.arrow}`}
             >
               <svg
                 width="20"
@@ -152,10 +160,11 @@ const News = () => {
               </svg>
             </div>
             <div
+              id="arrow-left"
               onClick={() => {
                 swiper.slideNext()
               }}
-              className={`${styles.arrow}`}
+              className={`arrow ${styles.arrow}`}
             >
               <svg
                 width="20"
@@ -180,7 +189,7 @@ const News = () => {
           className={styles.newsWrapper}
         >
           {newsData.map((item, idx) => (
-            <SwiperSlide key={idx} className={styles.newsItem}>
+            <SwiperSlide key={idx} className={`news-item ${styles.newsItem}`}>
               <svg
                 width="22"
                 height="24"

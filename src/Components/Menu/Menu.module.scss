@@ -1,0 +1,95 @@
+.menu {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 10;
+  background-image: url('./assets/bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+
+  padding: 85px 50px 50px 70px;
+
+  .menuLabel {
+    margin-left: 32%;
+    margin-bottom: 15px;
+  }
+
+  h5 {
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 119%;
+    color: #f6f6f6;
+    opacity: 0.1;
+    text-transform: uppercase;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menuList {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: end;
+      gap: 45px;
+      transition: opacity 1s ease;
+      opacity: 0;
+
+      &:hover {
+        svg {
+          rotate: 0deg;
+          opacity: 1;
+
+          path {
+            opacity: 1;
+          }
+        }
+
+        h1 {
+          color: rgba(246, 246, 246, 1);
+        }
+      }
+
+      svg {
+        transition: 0.5s ease;
+        transition-property: rotate, opacity;
+        rotate: -45deg;
+        opacity: 0;
+        translate: 0 -20px;
+
+        path {
+          transition: opacity 0.5s ease;
+        }
+      }
+
+      h1 {
+        color: rgba(246, 246, 246, 0.7);
+        transition: color 0.5s ease;
+      }
+    }
+  }
+
+  .leftSide {
+    h3 a {
+      text-decoration-line: underline;
+      color: #ffffff;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

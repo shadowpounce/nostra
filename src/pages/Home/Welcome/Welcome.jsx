@@ -4,10 +4,10 @@ import Header from '../../../Components/Header/Header'
 
 import styles from './Welcome.module.scss'
 
-const Welcome = () => {
+const Welcome = ({ menuActive, setMenuActive }) => {
   return (
     <section className={`section s-1 ${styles.welcome}`} id="s-1">
-      <Header />
+      <Header setMenuActive={setMenuActive} menuActive={menuActive} />
       <div className={styles.block}>
         <span className="label">metaverse for businesses</span>
         <h1>Meta what?</h1>

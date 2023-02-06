@@ -9,7 +9,6 @@
       #993962 41.17%,
       #3c1046 59.12%
     );
-    opacity: 0.15;
     filter: blur(75px);
     transform: rotate(57.37deg);
     width: 450px;
@@ -17,6 +16,8 @@
     left: 0;
     top: 0;
     position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease;
   }
 
   div[class='full-flex-row'] {

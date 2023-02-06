@@ -12,7 +12,7 @@ const Team = () => {
   return (
     <section id="s-8" className={`section ${styles.team}`}>
       <svg
-        className={styles.svg}
+        className={`svg ${styles.svg}`}
         width="831"
         height="1028"
         viewBox="0 0 831 1028"

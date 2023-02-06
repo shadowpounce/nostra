@@ -81,7 +81,6 @@ const Impressions = () => {
 
   return (
     <section id="s-5" className={`section ${styles.impressions}`}>
-      <img src={RGB} alt="rgb" className={styles.rgb} />
       <div className={styles.container}>
         <h4>Impressions</h4>
         <Swiper
@@ -119,6 +118,7 @@ const Impressions = () => {
           Download now
         </button>
       </div>
+      <img src={RGB} alt="rgb" className={`rgb ${styles.rgb}`} />
     </section>
   )
 }

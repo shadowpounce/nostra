@@ -10,6 +10,8 @@
     right: 10%;
     mix-blend-mode: darken;
     z-index: -10;
+    opacity: 0;
+    transition: opacity 1s ease;
   }
 
   h4 {

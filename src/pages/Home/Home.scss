@@ -1,5 +1,25 @@
 @import '../../assets/styles/animations.scss';
 
+.menu {
+  &.active {
+    opacity: 1 !important;
+
+    li {
+      animation: fadeInRight 1s forwards ease;
+    }
+  }
+
+  &.out {
+    opacity: 0 !important;
+    transition-delay: 0.5s !important;
+
+    li {
+      opacity: 1 !important;
+      animation: fadeOutRight 0.7s forwards ease;
+    }
+  }
+}
+
 #s-1 {
   .fp-overflow {
     display: flex;
@@ -72,6 +92,10 @@
     .name {
       opacity: 1;
     }
+
+    &::before {
+      opacity: 0.15;
+    }
   }
 }
 
@@ -84,6 +108,10 @@
     button {
       animation: fadeInScale 1s forwards ease;
     }
+
+    .rgb {
+      opacity: 1;
+    }
   }
 }
 
@@ -91,6 +119,10 @@
   &.fp-completely {
     .full-flex-row {
       animation: fadeInDown 1s forwards ease;
+    }
+
+    &::before {
+      opacity: 0.15;
     }
 
     h4 {
@@ -129,6 +161,10 @@
       transform: translate(0);
     }
 
+    &::before {
+      opacity: 0.3;
+    }
+
     h4 {
       animation: fadeInDown 1s forwards ease 0.7s;
     }
@@ -148,6 +184,69 @@
 
     h4 {
       animation: fadeInDown 1s forwards ease;
+    }
+
+    .svg {
+      opacity: 1;
+    }
+  }
+}
+
+#s-9 {
+  &.fp-completely {
+    .newsHead {
+      animation: fadeInDown 1s forwards ease;
+    }
+
+    .svg {
+      opacity: 1;
+    }
+
+    .news-body {
+      opacity: 1;
+    }
+
+    .category {
+      opacity: 1;
+      scale: 1;
+    }
+
+    .news-item {
+      opacity: 1;
+    }
+
+    .arrow {
+      opacity: 0.2;
+    }
+
+    #arrow-left {
+      animation: slideInRight 1s forwards ease;
+    }
+
+    #arrow-right {
+      animation: slideInLeft 1s forwards ease;
+    }
+  }
+}
+
+#s-10 {
+  .fp-overflow {
+    position: relative;
+  }
+
+  &.fp-completely {
+    big {
+      transform: translateY(15%);
+    }
+
+    h2 {
+      span:first-child {
+        animation: fadeInLeft 1s forwards ease;
+      }
+
+      span:last-child {
+        animation: fadeInRight 1s forwards ease;
+      }
     }
   }
 }

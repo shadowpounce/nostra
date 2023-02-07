@@ -2,29 +2,19 @@ import { create } from 'zustand'
 
 const useSectionsStore = create((set) => ({
   forYou: false,
-  impression: false,
-  values: false,
-  leavingImpressionDirection: undefined,
-  leavingValuesDirection: undefined,
+  swiperImpressions: null,
+  swiperValues: null,
   setForYou: (boolean) =>
     set({
       forYou: boolean,
     }),
-  setImpression: (boolean) =>
+  setSwiperImpressions: (swiper) =>
     set({
-      impression: boolean,
+      swiperImpressions: swiper,
     }),
-  setValues: (boolean) =>
+  setSwiperValues: (swiper) =>
     set({
-      values: boolean,
-    }),
-  setDirectionImpression: (direction) =>
-    set({
-      leavingImpressionDirection: direction,
-    }),
-  setDirectionValues: (direction) =>
-    set({
-      leavingValuesDirection: direction,
+      swiperValues: swiper,
     }),
 }))
 

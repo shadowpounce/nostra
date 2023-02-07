@@ -22,8 +22,9 @@ const Header = ({ menuActive, setMenuActive }) => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <a href="/">
+          <a data-hovered="true" href="/">
             <svg
+              data-hovered="true"
               width="129"
               height="33"
               viewBox="0 0 129 33"
@@ -122,6 +123,7 @@ const Header = ({ menuActive, setMenuActive }) => {
         <div onClick={() => openMenu()} className={styles.menuButton}>
           <p>Menu</p>
           <svg
+            data-hovered="true"
             width="47"
             height="11"
             viewBox="0 0 47 11"

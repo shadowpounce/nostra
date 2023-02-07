@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import useSectionsStore from '../../../store'
 import 'swiper/css'
@@ -55,29 +55,11 @@ const carouselItemsData = [
 import downloadIcon from './assets/download.svg'
 
 const Impressions = () => {
-  const [swiper, setSwiper] = useState('')
   const [activeSlide, setActiveSlide] = useState(0)
-  const swiperRef = useRef()
 
-  const sectionActive = useSectionsStore((state) => state.impression)
-  const leavingDirection = useSectionsStore(
-    (state) => state.leavingImpressionDirection
+  const setSwiperImpressions = useSectionsStore(
+    (state) => state.setSwiperImpressions
   )
-
-  useEffect(() => {
-    if (swiper !== '') {
-      if (sectionActive) {
-        swiper.slideTo(4, 1500)
-      } else {
-        if (leavingDirection === 'up') {
-          swiper.slideTo(0, 1500)
-        }
-        if (leavingDirection === 'down') {
-          swiper.slideTo(7, 1500)
-        }
-      }
-    }
-  }, [sectionActive])
 
   return (
     <section id="s-5" className={`section ${styles.impressions}`}>
@@ -86,7 +68,6 @@ const Impressions = () => {
         <Swiper
           speed={500}
           centeredSlides={true}
-          ref={swiperRef}
           className={styles.impressionsCarousel}
           spaceBetween={50}
           slidesPerView={3}
@@ -94,8 +75,7 @@ const Impressions = () => {
             setActiveSlide(swiper.activeIndex)
           }}
           onSwiper={(swiper) => {
-            setSwiper(swiper)
-            swiper.slideTo(activeSlide)
+            setSwiperImpressions(swiper)
           }}
         >
           {carouselItemsData.map((item, idx) => (
@@ -107,8 +87,12 @@ const Impressions = () => {
               key={idx}
             >
               <picture>
-                <source srcSet={item.webp} type="image/webp" />
-                <img src={item.png} alt="" />
+                <source
+                  data-hovered="true"
+                  srcSet={item.webp}
+                  type="image/webp"
+                />
+                <img data-hovered="true" src={item.png} alt="" />
               </picture>
             </SwiperSlide>
           ))}

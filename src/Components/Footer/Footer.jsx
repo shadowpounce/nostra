@@ -7,6 +7,7 @@ const Footer = () => {
     <footer className={`section ${styles.footer}`}>
       <div className={`${styles.colOne} ${styles.col}`} id="col-1">
         <svg
+          data-hovered="true"
           width="93"
           height="24"
           viewBox="0 0 93 24"

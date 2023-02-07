@@ -69,9 +69,10 @@ const ForYou = ({ sectionForYou }) => {
               onClick={(e) => openCase(e)}
               id={idx}
               key={idx}
+              data-hovered="true"
               className={styles.case}
             >
-              <div className={styles.caseHead}>
+              <div data-hovered="true" className={styles.caseHead}>
                 <span>/0{idx + 1}</span>
                 <div className={`${styles.caseHeadInfo}`}>
                   <small>{item.title}</small>

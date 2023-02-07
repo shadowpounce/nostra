@@ -21,46 +21,66 @@ const Home = () => {
   const [menuActive, setMenuActive] = useState(false)
 
   const sectionForYouActive = useSectionsStore((state) => state.setForYou)
-  const sectionImpressionActive = useSectionsStore(
-    (state) => state.setImpression
-  )
-  const sectionValuesActive = useSectionsStore((state) => state.setValues)
-  const setDirectionImpression = useSectionsStore(
-    (state) => state.setDirectionImpression
-  )
-  const setDirectionValues = useSectionsStore(
-    (state) => state.setDirectionValues
-  )
+  const swiperImpressions = useSectionsStore((state) => state.swiperImpressions)
+  const swiperValues = useSectionsStore((state) => state.swiperValues)
 
   return (
     <ReactFullpage
       licenseKey={'YOUR_KEY_HERE'}
       scrollingSpeed={1000}
+      afterLoad={(origin, destination, direction, trigger) => {
+        const activeSection = window.fullpage_api.getActiveSection().item.id
+
+        if (activeSection === 's-5') {
+          swiperImpressions.slideTo(4, 1500)
+        }
+
+        if (activeSection === 's-7') {
+          swiperValues.slideTo(5, 1500)
+        }
+      }}
       onLeave={(origin, destination, direction, trigger) => {
         if (menuActive) {
           return false
         }
+
+        if (origin.index === 3) {
+          swiperImpressions.slideTo(4, 1500)
+        }
+        if (origin.index === 4) {
+          if (direction === 'down') {
+            swiperImpressions.slideTo(7, 1500)
+          } else {
+            swiperImpressions.slideTo(1, 1500)
+          }
+        }
+        if (origin.index === 5) {
+          if (direction === 'up') {
+            swiperImpressions.slideTo(4, 1500)
+          } else {
+            swiperValues.slideTo(5, 1500)
+          }
+        }
+
+        if (origin.index === 6) {
+          if (direction === 'up') {
+            swiperValues.slideTo(0, 1500)
+          } else {
+            swiperValues.slideTo(10, 1500)
+          }
+        }
+
+        if (origin.index === 7) {
+          if (direction === 'up') {
+            swiperValues.slideTo(5, 1500)
+          }
+        }
+
         const sec = origin.item
         if (sec.id === 's-4' || sec.id === 's-2') {
           sectionForYouActive(true)
         } else {
           sectionForYouActive(false)
-        }
-        if (sec.id === 's-4' || sec.id === 's-6') {
-          sectionImpressionActive(true)
-        } else {
-          direction === 'down'
-            ? setDirectionImpression('down')
-            : setDirectionImpression('up')
-          sectionImpressionActive(false)
-        }
-        if (sec.id === 's-5' || sec.id === 's-7') {
-          sectionValuesActive(true)
-        } else {
-          direction === 'down'
-            ? setDirectionValues('down')
-            : setDirectionValues('up')
-          sectionValuesActive(false)
         }
       }}
       render={({ state, fullpageApi }) => {

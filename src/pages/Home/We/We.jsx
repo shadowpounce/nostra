@@ -34,6 +34,7 @@ const We = () => {
         <div className="full-flex-row">
           <h2>WE</h2>
           <svg
+            data-hovered="true"
             className="arrow"
             width="42"
             height="42"

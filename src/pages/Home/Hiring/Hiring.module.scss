@@ -83,6 +83,16 @@
         span {
           opacity: 0;
           display: block;
+          transition: 1s ease;
+          transition-property: translate, opacity;
+
+          &:first-child {
+            translate: -150px 0;
+          }
+
+          &:last-child {
+            translate: 200px 0;
+          }
         }
 
         .colored {
@@ -91,7 +101,6 @@
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          transition: all 1s ease;
         }
       }
     }

@@ -29,6 +29,7 @@ const Location = () => {
         <div className="full-flex-row">
           <h3>We</h3>
           <svg
+            data-hovered="true"
             className="arrow"
             width="25"
             height="25"

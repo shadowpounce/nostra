@@ -1,34 +1,11 @@
-import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Autoplay } from 'swiper'
 import useSectionsStore from '../../../store'
 import 'swiper/css'
 import valuesData from './valuesData'
 import styles from './Values.module.scss'
 
 const Values = () => {
-  const [swiper, setSwiper] = useState(undefined)
-  SwiperCore.use([Autoplay])
-
-  const sectionActive = useSectionsStore((state) => state.values)
-  const leavingDirection = useSectionsStore(
-    (state) => state.leavingValuesDirection
-  )
-
-  useEffect(() => {
-    if (swiper !== '') {
-      if (sectionActive) {
-        swiper.slideTo(10, 1500)
-      } else {
-        if (leavingDirection === 'up') {
-          swiper.slideTo(5, 1500)
-        }
-        if (leavingDirection === 'down') {
-          swiper.slideTo(5, 1500)
-        }
-      }
-    }
-  }, [sectionActive])
+  const setSwiperValues = useSectionsStore((state) => state.setSwiperValues)
 
   return (
     <section id="s-7" className={`section ${styles.values}`}>
@@ -54,14 +31,15 @@ const Values = () => {
       </div>
       <Swiper
         loop={true}
+        initialSlide={-5}
         slidesPerView={5}
         spaceBetween={25}
         speed={250}
-        onSwiper={(swiper) => setSwiper(swiper)}
+        onSwiper={(swiper) => setSwiperValues(swiper)}
         className={`swiper-values ${styles.valuesBody}`}
       >
         {valuesData.map((value, idx) => (
-          <SwiperSlide key={idx} className={styles.value}>
+          <SwiperSlide key={idx} className={` ${styles.value}`}>
             <img src={value.img} alt="" />
             <div className={styles.head}>
               <h6>values</h6>

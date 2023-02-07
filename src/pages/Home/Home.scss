@@ -1,7 +1,10 @@
 @import '../../assets/styles/animations.scss';
 
 .menu {
+  pointer-events: none;
+
   &.active {
+    pointer-events: all !important;
     opacity: 1 !important;
 
     li {
@@ -10,6 +13,7 @@
   }
 
   &.out {
+    pointer-events: none !important;
     opacity: 0 !important;
     transition-delay: 0.5s !important;
 
@@ -240,12 +244,9 @@
     }
 
     h2 {
-      span:first-child {
-        animation: fadeInLeft 1s forwards ease;
-      }
-
-      span:last-child {
-        animation: fadeInRight 1s forwards ease;
+      span {
+        opacity: 1;
+        translate: 0;
       }
     }
   }

@@ -120,6 +120,11 @@
             width: 330px;
             height: 445px;
           }
+
+          @media (max-width: 1400px) {
+            width: 300px;
+            height: 400px;
+          }
         }
       }
     }

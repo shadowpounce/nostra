@@ -74,6 +74,10 @@
           text-transform: capitalize;
           writing-mode: vertical-lr;
           rotate: -180deg;
+
+          @media (max-width: 1400px) {
+            font-size: 250px;
+          }
         }
       }
 

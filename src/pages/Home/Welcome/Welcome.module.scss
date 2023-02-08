@@ -34,6 +34,13 @@
 
   h1 svg {
     margin-left: 50px;
+
+    @media (max-width: 1400px) {
+      margin-left: 25px;
+      width: 35px;
+      height: 35px;
+      display: inline-block;
+    }
   }
 
   h1:last-child {
@@ -50,6 +57,11 @@
   margin-bottom: 0;
   cursor: pointer;
   transform: scale(1.5) translate(0, -5px) !important;
+
+  @media (max-width: 1400px) {
+    transform: scale(1) translate(0, 0px) !important;
+  }
+
   span {
     font-size: 15px;
     font-weight: 400;

@@ -57,14 +57,20 @@
           width: 900px;
         }
 
+        @media (max-width: 1400px) {
+          width: 700px;
+          translate: 0 -75px;
+        }
+
         div[class='white-connections'] {
           position: absolute;
           top: 50%;
           left: 42%;
           transform: translate(-50%, -50%);
 
-          @media (max-width: 1600px) {
-            // max-width: 500px;
+          @media (max-width: 1400px) {
+            transform-origin: left top;
+            scale: 0.6;
           }
 
           div[id='p-1'] {

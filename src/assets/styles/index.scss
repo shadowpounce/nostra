@@ -30,6 +30,10 @@ h1 {
   @media (max-width: 1600px) {
     font-size: 65px;
   }
+
+  @media (max-width: 1400px) {
+    font-size: 60px;
+  }
 }
 
 h2 {
@@ -39,6 +43,10 @@ h2 {
 
   @media (max-width: 1750px) {
     font-size: 55px;
+  }
+
+  @media (max-width: 1400px) {
+    font-size: 50p;
   }
 }
 
@@ -50,6 +58,10 @@ h3 {
 
   @media (max-width: 1600px) {
     font-size: 26px;
+  }
+
+  @media (max-width: 1400px) {
+    font-size: 22px;
   }
 }
 
@@ -65,6 +77,10 @@ h4 {
 
   @media (max-width: 1750px) {
     font-size: 50px;
+  }
+
+  @media (max-width: 1400px) {
+    font-size: 40px;
   }
 }
 

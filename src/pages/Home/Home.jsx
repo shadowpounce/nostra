@@ -1,6 +1,6 @@
 import ReactFullpage from '@fullpage/react-fullpage'
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import useSectionsStore from '../../store'
 import Welcome from './Welcome/Welcome'
 import We from './We/We'

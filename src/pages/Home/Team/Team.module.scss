@@ -38,6 +38,10 @@
     gap: 100px;
     justify-content: center;
 
+    @media (max-width: 1400px) {
+      gap: 50px;
+    }
+
     .teamItem {
       display: flex;
       align-items: start;
@@ -87,6 +91,11 @@
           height: 500px;
         }
 
+        @media (max-width: 1400px) {
+          width: 300px;
+          height: 400px;
+        }
+
         p {
           color: #0d0d0e;
           position: absolute;
@@ -98,6 +107,12 @@
           max-width: 125px;
           width: 125px;
           min-width: 125px;
+
+          @media (max-width: 1400px) {
+            font-size: 8px;
+            max-width: 100px;
+            min-width: 100px;
+          }
         }
       }
 

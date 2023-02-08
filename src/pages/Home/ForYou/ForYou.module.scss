@@ -102,6 +102,10 @@
               max-width: 400px;
             }
 
+            @media (max-width: 1400px) {
+              max-width: 350px;
+            }
+
             div {
               padding-top: 15px;
               display: flex;
@@ -132,6 +136,10 @@
               opacity: 0;
               transform: translate(-100px, 0);
               animation: fadeOutLeft 0.5s forwards ease;
+
+              @media (max-width: 1400px) {
+                top: -25px;
+              }
             }
 
             .image {
@@ -142,8 +150,11 @@
               transform-origin: center;
               transition: all 1s ease;
               transform: scale(0.5);
-
               animation: fadeOutScale 0.5s forwards ease;
+
+              @media (max-width: 1400px) {
+                height: 300px;
+              }
             }
           }
         }
@@ -168,6 +179,10 @@
           line-height: 119%;
           text-align: center;
           color: rgb(255, 255, 255, 0.4);
+
+          @media (max-width: 1400px) {
+            width: 70px;
+          }
 
           &::before {
             content: '';

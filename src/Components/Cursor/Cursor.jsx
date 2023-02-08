@@ -30,13 +30,15 @@ const Cursor = () => {
       const y = e.y
       const element = e.toElement
 
-      tagNames.forEach((tag) => {
-        if (element.dataset.hovered === 'true') {
-          cursor.classList.add(`${styles.scale}`)
-        } else {
-          cursor.classList.remove(`${styles.scale}`)
-        }
-      })
+      if (!cursor.style.opacity) {
+        cursor.style.opacity = 1
+      }
+
+      if (element.dataset.hovered === 'true') {
+        cursor.classList.add(`${styles.scale}`)
+      } else {
+        cursor.classList.remove(`${styles.scale}`)
+      }
 
       cursor.style.top = `${y - 25}px`
       cursor.style.left = `${x - 25}px`

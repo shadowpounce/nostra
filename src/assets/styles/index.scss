@@ -22,12 +22,24 @@ h1 {
   text-transform: uppercase;
   color: #f6f6f6;
   font-weight: 400;
+
+  @media (max-width: 1750px) {
+    font-size: 80px;
+  }
+
+  @media (max-width: 1600px) {
+    font-size: 65px;
+  }
 }
 
 h2 {
   font-weight: 400;
   font-size: 68px;
   color: #f7f7f7;
+
+  @media (max-width: 1750px) {
+    font-size: 55px;
+  }
 }
 
 h3 {
@@ -35,6 +47,10 @@ h3 {
   font-size: 30px;
   line-height: 119%;
   color: rgb(255, 255, 255, 0.6);
+
+  @media (max-width: 1600px) {
+    font-size: 26px;
+  }
 }
 
 h4 {
@@ -42,6 +58,14 @@ h4 {
   font-size: 68px;
   text-transform: uppercase;
   color: #ffffff;
+
+  @media (max-width: 1750px) {
+    font-size: 54px;
+  }
+
+  @media (max-width: 1750px) {
+    font-size: 50px;
+  }
 }
 
 input::placeholder {
@@ -69,6 +93,10 @@ p {
   font-size: 14px;
   line-height: 119%;
   color: rgb(246, 246, 246, 0.9);
+
+  @media (max-width: 1750px) {
+    font-size: 12px;
+  }
 }
 
 button {

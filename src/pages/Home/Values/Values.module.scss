@@ -43,6 +43,10 @@
       opacity: 0;
       z-index: 5;
 
+      @media (max-width: 1750px) {
+        padding: 42px 0 0 0;
+      }
+
       p {
         color: #f5f5f5;
 
@@ -87,6 +91,10 @@
     gap: 23px;
     position: relative;
 
+    @media (max-width: 1600px) {
+      padding: 125px 0 50px;
+    }
+
     &::before {
       content: '';
       display: block;
@@ -116,6 +124,14 @@
       user-select: none;
       -webkit-user-drag: none;
 
+      @media (max-width: 1750px) {
+        height: 400px;
+      }
+
+      @media (max-width: 1600px) {
+        height: 375px;
+      }
+
       img {
         position: absolute;
         bottom: 0;
@@ -143,6 +159,10 @@
           opacity: 0.3;
           text-transform: uppercase;
           text-decoration: underline;
+
+          @media (max-width: 1600px) {
+            font-size: 10px;
+          }
         }
       }
 

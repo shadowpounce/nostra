@@ -69,7 +69,7 @@ const Impressions = () => {
           speed={500}
           centeredSlides={true}
           className={styles.impressionsCarousel}
-          spaceBetween={50}
+          spaceBetween={35}
           slidesPerView={3}
           onSlideChange={(swiper) => {
             setActiveSlide(swiper.activeIndex)

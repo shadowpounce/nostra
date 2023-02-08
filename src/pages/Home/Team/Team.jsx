@@ -67,23 +67,25 @@ const Team = () => {
         <div className={styles.teamItems}>
           {teamData.map((member, idx) => (
             <div key={idx} className={`name ${styles.teamItem}`}>
-              <p>
-                Nostra aims to constantly set new standards and to facilitate
-                social immersion to lead the way to convoy people together in an
-                innovative, new digital world.
-              </p>
-              <picture>
-                <source
-                  srcSet={member.img.webp}
-                  className={styles.memberPhoto}
-                  type="image/webp"
-                />
-                <img
-                  src={member.img.png}
-                  alt={member.name}
-                  className={styles.memberPhoto}
-                />
-              </picture>
+              <div className={styles.photoWrapper}>
+                <p>
+                  Nostra aims to constantly set new standards and to facilitate
+                  social immersion to lead the way to convoy people together in
+                  an innovative, new digital world.
+                </p>
+                <picture>
+                  <source
+                    srcSet={member.img.webp}
+                    className={styles.memberPhoto}
+                    type="image/webp"
+                  />
+                  <img
+                    src={member.img.png}
+                    alt={member.name}
+                    className={styles.memberPhoto}
+                  />
+                </picture>
+              </div>
               <span className="label">{member.role}</span>
               <h3>{member.name}</h3>
             </div>

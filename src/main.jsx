@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import Cursor from './Components/Cursor/Cursor'
-import './assets/styles/index.scss'
-import './assets/styles/animations.scss'
+import './styles/index.scss'
+import './styles/animations.scss'
 
 import { createRoot } from 'react-dom/client'
 import {

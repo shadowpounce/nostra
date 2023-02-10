@@ -36,6 +36,10 @@
 
     .line {
       margin: 45px 0;
+
+      @media (max-width: 1400px) {
+        margin: 20px 0;
+      }
     }
 
     .wrapper {

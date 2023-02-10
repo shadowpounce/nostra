@@ -1,0 +1,82 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 100;
+  pointer-events: all;
+  background-color: #0b0b0d;
+
+  transition: 1s ease;
+  transition-property: opacity;
+  transition-delay: 1s;
+
+  &.loaded {
+    opacity: 0;
+    pointer-events: none;
+
+    big[id='ot-1'] {
+      translate: -100% 0;
+      opacity: 0;
+    }
+
+    big[id='ot-2'] {
+      translate: 100% -50%;
+      opacity: 0;
+    }
+
+    big[id='ot-3'] {
+      translate: -100% 0;
+      opacity: 0;
+    }
+
+    .percentLoading {
+      scale: 0.5;
+      opacity: 0;
+    }
+  }
+
+  .overlayText {
+    font-weight: 300;
+    font-size: 250px;
+    line-height: 119%;
+    color: #000000;
+    text-transform: uppercase;
+    position: absolute;
+    white-space: nowrap;
+    transition: 1.2s ease;
+    transition-property: opacity, translate;
+  }
+
+  .percentLoading {
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 100%;
+    color: #f6f6f6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    transition: 0.5s ease;
+    transition-delay: 0.5s;
+    transition-property: opacity, scale;
+  }
+
+  big[id='ot-1'] {
+    top: 60px;
+    left: 0;
+  }
+
+  big[id='ot-2'] {
+    top: 50%;
+    translate: 0 -50%;
+  }
+
+  big[id='ot-3'] {
+    bottom: 60px;
+    left: 0;
+  }
+}

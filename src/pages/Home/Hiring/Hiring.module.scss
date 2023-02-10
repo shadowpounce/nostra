@@ -58,6 +58,10 @@
         transform-origin: center;
         transition: transform 1.25s ease;
 
+        @media (max-width: 1024px) {
+          right: 35px;
+        }
+
         svg {
           transform: translate(50px, 0px);
         }
@@ -77,6 +81,14 @@
 
           @media (max-width: 1400px) {
             font-size: 250px;
+          }
+
+          @media (max-width: 1280px) {
+            font-size: 200px;
+          }
+
+          @media (max-width: 1024px) {
+            font-size: 150px;
           }
         }
       }
@@ -129,6 +141,10 @@
         flex-direction: column;
         gap: 60px;
         width: 275px;
+
+        @media (max-width: 1024px) {
+          width: 225px;
+        }
       }
 
       .suggestion {
@@ -138,6 +154,11 @@
         display: flex;
         flex-direction: column;
         border: 1.5px solid rgb(255, 255, 255, 0.7);
+
+        @media (max-width: 1024px) {
+          height: 375px;
+          min-height: 375px;
+        }
 
         > * {
           color: #f2f2f2 !important;

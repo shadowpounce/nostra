@@ -60,6 +60,10 @@
           opacity: 0.2;
           width: 11px;
           height: 11px;
+
+          @media (max-width: 1400px) {
+            right: -10%;
+          }
         }
 
         &:last-child .title:last-child h4::after {

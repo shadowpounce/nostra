@@ -185,7 +185,15 @@ const News = () => {
         </div>
         <Swiper
           onSwiper={(swiper) => setSwiper(swiper)}
-          slidesPerView={3}
+          speed={850}
+          breakpoints={{
+            1140: {
+              slidesPerView: 3,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+          }}
           className={styles.newsWrapper}
         >
           {newsData.map((item, idx) => (

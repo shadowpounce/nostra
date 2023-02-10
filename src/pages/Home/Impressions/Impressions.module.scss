@@ -21,9 +21,6 @@
     opacity: 0;
   }
 
-  div[class='swiper-wrapper'] {
-  }
-
   &Carousel {
     width: 100%;
     rotate: -7deg;
@@ -52,6 +49,11 @@
 
       @media (max-width: 1400px) {
         height: 275px;
+      }
+
+      @media (max-width: 1280px) {
+        width: 275px;
+        height: 225px;
       }
     }
 
@@ -91,8 +93,20 @@
       min-width: 300px;
     }
 
+    @media (max-width: 1400px) {
+      height: 60px;
+      min-width: 200px;
+      font-size: 12px;
+      gap: 6.5px;
+    }
+
     img {
       transform: translate(0, 4px);
+
+      @media (max-width: 1400px) {
+        max-width: 25px;
+        transform: translate(0, 2px);
+      }
     }
   }
 }

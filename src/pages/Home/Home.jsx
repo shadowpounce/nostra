@@ -14,6 +14,7 @@ import News from './News/News'
 import Hiring from './Hiring/Hiring'
 import Footer from '../../Components/Footer/Footer'
 import Menu from '../../Components/Menu/Menu'
+import Preloader from '../../Components/Preloader/Preloader.jsx'
 
 import './Home.scss'
 
@@ -86,6 +87,7 @@ const Home = () => {
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
+            <Preloader />
             <Menu setMenuActive={setMenuActive} menuActive={menuActive} />
             <Welcome setMenuActive={setMenuActive} menuActive={menuActive} />
             <We />

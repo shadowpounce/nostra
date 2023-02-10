@@ -5,6 +5,14 @@
   background-size: 105%;
   padding-bottom: 30px;
 
+  @media (min-height: 750px) {
+    background-size: 115%;
+  }
+
+  @media (max-width: 1024px) {
+    background-size: 150%;
+  }
+
   &::before {
     content: '';
     display: block;

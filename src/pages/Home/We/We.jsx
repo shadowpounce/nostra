@@ -30,8 +30,8 @@ const We = () => {
 
   return (
     <section className={`section ${styles.we}`} id="s-2">
-      <div className="container">
-        <div className="full-flex-row">
+      <div className={`${styles.container} container`}>
+        <div className={`${styles.row} full-flex-row`}>
           <h2>WE</h2>
           <svg
             data-hovered="true"

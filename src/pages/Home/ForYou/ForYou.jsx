@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import useSectionsStore from '../../../store'
 import styles from './ForYou.module.scss'
 
-const ForYou = ({ sectionForYou }) => {
+const ForYou = () => {
   const [activeCaseID, setActiveCaseID] = useState(undefined)
   const [caseBodyW, setCaseBodyW] = useState(0)
 

@@ -70,6 +70,11 @@
         padding: 60px 15px 60px 30px;
       }
 
+      @media (max-width: 1024px) {
+        width: 25%;
+        min-width: 25%;
+      }
+
       .categories {
         margin-top: 27px;
         width: 100%;
@@ -159,6 +164,10 @@
           padding: 75px 0 30px 30px;
         }
 
+        @media (max-width: 1280px) {
+          padding: 50px 0 30px 35px;
+        }
+
         .newsArrow {
           position: absolute;
           top: 65px;
@@ -171,6 +180,10 @@
           right: 155px;
           color: #525252;
           opacity: 0.9;
+
+          @media (max-width: 1280px) {
+            right: 100px;
+          }
         }
 
         .newsPicture {

@@ -3,7 +3,7 @@ import { preloader } from './preloader'
 
 import styles from './Preloader.module.scss'
 
-const Preloader = ({}) => {
+const Preloader = ({ setSiteLoaded }) => {
   const [loading, setLoading] = useState(0)
 
   const refPreloader = useRef(null)
@@ -15,7 +15,7 @@ const Preloader = ({}) => {
         if (complete || percentage > 80) {
           setTimeout(() => {
             refPreloader.current.classList.add(styles.loaded)
-            func()
+            setTimeout(() => setSiteLoaded(true), 1000)
           }, 1000)
         }
       },

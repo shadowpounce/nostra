@@ -42,13 +42,17 @@
   .overlayText {
     font-weight: 300;
     font-size: 250px;
-    line-height: 119%;
+    line-height: 100%;
     color: #000000;
     text-transform: uppercase;
     position: absolute;
     white-space: nowrap;
     transition: 1.2s ease;
     transition-property: opacity, translate;
+
+    @media (max-height: 666px) {
+      font-size: 200px;
+    }
   }
 
   .percentLoading {
@@ -68,6 +72,10 @@
   big[id='ot-1'] {
     top: 60px;
     left: 0;
+
+    @media (max-height: 800px) {
+      top: 0;
+    }
   }
 
   big[id='ot-2'] {
@@ -78,5 +86,9 @@
   big[id='ot-3'] {
     bottom: 60px;
     left: 0;
+
+    @media (max-height: 800px) {
+      bottom: 0;
+    }
   }
 }

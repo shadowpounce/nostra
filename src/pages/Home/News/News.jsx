@@ -105,7 +105,7 @@ const News = () => {
       </svg>
 
       <div className={`newsHead ${styles.newsHead}`}>
-        <h1>What's up</h1>
+        <h1>News</h1>
         <div className={styles.sort}>
           <div className={styles.sortHead}>
             <span className={styles.sortValue}>Latest news</span>

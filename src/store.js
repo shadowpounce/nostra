@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 
 const useSectionsStore = create((set) => ({
+  deviceWidth: window.innerWidth,
   forYou: false,
   swiperImpressions: null,
   swiperValues: null,

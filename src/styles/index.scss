@@ -100,7 +100,7 @@ h4 {
   }
 
   @media (max-width: 480px) {
-    font-size: 22px;
+    font-size: 35px;
   }
 }
 
@@ -136,6 +136,10 @@ p {
 
   @media (max-width: 1280px) {
     font-size: 10px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
   }
 }
 

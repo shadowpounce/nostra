@@ -96,6 +96,12 @@
 }
 
 #s-3 {
+  .fp-overflow {
+    @media (max-width: 480px) {
+      overflow-x: hidden;
+    }
+  }
+
   &.fp-completely {
     h3 {
       animation: fadeInAbsolute 1s forwards ease;
@@ -187,6 +193,10 @@
 
     h4 {
       animation: fadeInDown 1s forwards ease 0.7s;
+
+      @media (max-width: 480px) {
+        animation: fadeInDown 1s forwards ease 1.5s;
+      }
     }
 
     .head > div {

@@ -21,7 +21,7 @@
 
     @media (max-width: 480px) {
       width: 205px;
-      height: 330px;
+      height: 335px;
     }
   }
 
@@ -37,6 +37,7 @@
     @media (max-width: 480px) {
       padding: 15px 20px;
       overflow: unset;
+      overflow-x: hidden;
     }
 
     h3 {

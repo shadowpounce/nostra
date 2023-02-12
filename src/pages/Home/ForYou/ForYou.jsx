@@ -5,6 +5,9 @@ import useSectionsStore from '../../../store'
 import styles from './ForYou.module.scss'
 
 const ForYou = () => {
+  const deviceWidth = useSectionsStore((state) => state.deviceWidth)
+  const notMobile = deviceWidth > 480
+
   const [activeCaseID, setActiveCaseID] = useState(undefined)
   const [caseBodyW, setCaseBodyW] = useState(0)
 
@@ -31,7 +34,9 @@ const ForYou = () => {
       setActiveCaseID(undefined)
       document.querySelectorAll(`.${styles.case}`).forEach((el) => {
         el.classList.remove(`${styles.active}`)
-        el.querySelector(`.${styles.caseBody}`).style.width = `0px`
+        if (notMobile) {
+          el.querySelector(`.${styles.caseBody}`).style.width = `0px`
+        }
       })
     }
   }, [sectionActive])
@@ -41,9 +46,11 @@ const ForYou = () => {
       const cases = document.querySelectorAll(`.${styles.case}`)
 
       cases[activeCaseID].classList.add(`${styles.active}`)
-      cases[activeCaseID].querySelector(
-        `.${styles.caseBody}`
-      ).style.width = `${caseBodyW}px`
+      if (notMobile) {
+        cases[activeCaseID].querySelector(
+          `.${styles.caseBody}`
+        ).style.width = `${caseBodyW}px`
+      }
     }
   }, [activeCaseID, caseBodyW])
 
@@ -52,7 +59,9 @@ const ForYou = () => {
     if (activeCaseID !== id) {
       document.querySelectorAll(`.${styles.case}`).forEach((el) => {
         el.classList.remove(`${styles.active}`)
-        el.querySelector(`.${styles.caseBody}`).style.width = `0px`
+        if (notMobile) {
+          el.querySelector(`.${styles.caseBody}`).style.width = `0px`
+        }
       })
 
       setActiveCaseID(id)

@@ -1,6 +1,6 @@
 import ReactFullpage from '@fullpage/react-fullpage'
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import useSectionsStore from '../../store'
 import Welcome from './Welcome/Welcome'
 import We from './We/We'
@@ -20,7 +20,9 @@ import './Home.scss'
 
 const Home = () => {
   const [menuActive, setMenuActive] = useState(false)
-  const [siteLoaded, setSiteLoaded] = useState(true)
+  const [siteLoaded, setSiteLoaded] = useState(false)
+
+  const deviceWidth = useSectionsStore((state) => state.deviceWidth)
 
   const sectionForYouActive = useSectionsStore((state) => state.setForYou)
   const swiperImpressions = useSectionsStore((state) => state.swiperImpressions)
@@ -30,66 +32,74 @@ const Home = () => {
     <ReactFullpage
       licenseKey={'YOUR_KEY_HERE'}
       scrollingSpeed={1000}
-      // afterLoad={(origin, destination, direction, trigger) => {
-      //   const activeSection = window.fullpage_api.getActiveSection().item.id
+      afterLoad={(origin, destination, direction, trigger) => {
+        const activeSection = window.fullpage_api.getActiveSection().item.id
 
-      //   if (activeSection === 's-5') {
-      //     swiperImpressions.slideTo(4, 1500)
-      //   }
+        if (activeSection === 's-5') {
+          swiperImpressions.slideTo(4, 1500)
+        }
 
-      //   if (activeSection === 's-7') {
-      //     swiperValues.slideTo(5, 1500)
-      //   }
-      // }}
-      // onLeave={(origin, destination, direction, trigger) => {
-      //   if (menuActive) {
-      //     return false
-      //   }
+        if (activeSection === 's-7') {
+          swiperValues.slideTo(5, 1500)
+        }
+      }}
+      onLeave={(origin, destination, direction, trigger) => {
+        if (menuActive) {
+          return false
+        }
 
-      //   if (origin.index === 3) {
-      //     swiperImpressions.slideTo(4, 1500)
-      //   }
-      //   if (origin.index === 4) {
-      //     if (direction === 'down') {
-      //       swiperImpressions.slideTo(7, 1500)
-      //     } else {
-      //       swiperImpressions.slideTo(1, 1500)
-      //     }
-      //   }
-      //   if (origin.index === 5) {
-      //     if (direction === 'up') {
-      //       swiperImpressions.slideTo(4, 1500)
-      //     } else {
-      //       swiperValues.slideTo(5, 1500)
-      //     }
-      //   }
+        if (origin.index === 3) {
+          swiperImpressions.slideTo(4, 1500)
+        }
+        if (origin.index === 4) {
+          if (direction === 'down') {
+            swiperImpressions.slideTo(7, 1500)
+          } else {
+            swiperImpressions.slideTo(1, 1500)
+          }
+        }
+        if (origin.index === 5) {
+          if (direction === 'up') {
+            swiperImpressions.slideTo(4, 1500)
+          } else {
+            swiperValues.slideTo(5, 1500)
+          }
+        }
 
-      //   if (origin.index === 6) {
-      //     if (direction === 'up') {
-      //       swiperValues.slideTo(0, 1500)
-      //     } else {
-      //       swiperValues.slideTo(10, 1500)
-      //     }
-      //   }
+        if (origin.index === 6) {
+          if (direction === 'up') {
+            swiperValues.slideTo(0, 1500)
+          } else {
+            swiperValues.slideTo(10, 1500)
+          }
+        }
 
-      //   if (origin.index === 7) {
-      //     if (direction === 'up') {
-      //       swiperValues.slideTo(5, 1500)
-      //     }
-      //   }
+        if (origin.index === 7) {
+          if (direction === 'up') {
+            swiperValues.slideTo(5, 1500)
+          }
+        }
 
-      //   const sec = origin.item
-      //   if (sec.id === 's-4' || sec.id === 's-2') {
-      //     sectionForYouActive(true)
-      //   } else {
-      //     sectionForYouActive(false)
-      //   }
-      // }}
+        const sec = origin.item
+        if (deviceWidth > 480) {
+          if (sec.id === 's-4' || sec.id === 's-2') {
+            sectionForYouActive(true)
+          } else {
+            sectionForYouActive(false)
+          }
+        } else {
+          if (sec.id === 's-4' || sec.id === 's-1') {
+            sectionForYouActive(true)
+          } else {
+            sectionForYouActive(false)
+          }
+        }
+      }}
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
-            {/* <Preloader setSiteLoaded={setSiteLoaded} />
-            <Menu setMenuActive={setMenuActive} menuActive={menuActive} /> */}
+            <Preloader setSiteLoaded={setSiteLoaded} />
+            <Menu setMenuActive={setMenuActive} menuActive={menuActive} />
             <Welcome
               siteLoaded={siteLoaded}
               setMenuActive={setMenuActive}

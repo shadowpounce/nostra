@@ -32,9 +32,17 @@ const Values = () => {
       <Swiper
         loop={true}
         initialSlide={-5}
-        slidesPerView={5}
+        slidesPerView={1}
         spaceBetween={25}
-        speed={250}
+        speed={750}
+        width={335}
+        breakpoints={{
+          481: {
+            speed: 250,
+            slidesPerView: 5,
+            width: null,
+          },
+        }}
         onSwiper={(swiper) => setSwiperValues(swiper)}
         className={`swiper-values ${styles.valuesBody}`}
       >

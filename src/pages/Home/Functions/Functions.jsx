@@ -9,6 +9,17 @@ const Functions = () => {
     const names = document.querySelectorAll(`.${styles.title}`)
     names.forEach((name, idx) => {
       name.style.transitionDelay = `0.${idx}5s`
+
+      if (window.innerWidth <= 480) {
+        name.addEventListener('click', () => {
+          if (name.classList.contains(styles.active)) {
+            name.classList.remove(styles.active)
+          } else {
+            names.forEach((name) => name.classList.remove(styles.active))
+            name.classList.add(styles.active)
+          }
+        })
+      }
     })
   })
 

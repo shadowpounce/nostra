@@ -110,14 +110,30 @@
           flex-direction: column-reverse;
         }
 
+        &.active {
+          @media (max-width: 480px) {
+            img {
+              height: 475px;
+              opacity: 1;
+            }
+
+            h4 {
+              z-index: 4;
+            }
+          }
+        }
+
         &:hover {
           img {
-            opacity: 1;
-            height: 475px;
+            @media (min-width: 481px) {
+              opacity: 1;
+            }
           }
 
           > h4 {
-            z-index: 4;
+            @media (min-width: 481px) {
+              z-index: 4;
+            }
           }
         }
 

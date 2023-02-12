@@ -116,6 +116,7 @@
           @media (max-width: 480px) {
             width: 100%;
             min-width: 100%;
+            height: 100%;
           }
 
           .bodyInfo {
@@ -191,6 +192,10 @@
 
               @media (max-width: 480px) {
                 top: -15px;
+              }
+
+              @media (max-width: 480px) {
+                transform: translate(-50px, 0);
               }
             }
 

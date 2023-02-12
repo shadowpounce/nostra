@@ -76,6 +76,7 @@ const Impressions = () => {
             481: {
               slidesPerView: 3,
               spaceBetween: 35,
+              width: null,
             },
           }}
           onSlideChange={(swiper) => {

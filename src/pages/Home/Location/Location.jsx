@@ -27,7 +27,7 @@ const Location = () => {
     <section id="s-6" className={`section ${styles.location}`}>
       <div className={`container ${styles.container}`}>
         <div className="full-flex-row">
-          <h3>We</h3>
+          <h3>About Us</h3>
           <svg
             data-hovered="true"
             className="arrow"

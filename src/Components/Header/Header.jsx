@@ -24,6 +24,79 @@ const Header = ({ menuActive, setMenuActive }) => {
         <div className={styles.logo}>
           <a data-hovered="true" href="/">
             <svg
+              className={styles.logoMb}
+              data-hovered="true"
+              width="129"
+              height="33"
+              viewBox="0 0 129 33"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.6513 3.48102L18.55 2.26704C14.7435 0.0715437 10.0501 0.0629339 6.235 2.26704L6.1661 2.31009C2.31659 4.53141 0 8.53497 0 12.9776V28.4322C0 30.7138 1.85155 32.5649 4.1337 32.5649C6.41585 32.5649 8.2674 30.7138 8.2674 28.4322V20.1668V15.397V12.969C8.2674 11.5226 9.04247 10.1794 10.2998 9.45621L10.3687 9.41316C11.626 8.68994 13.1762 8.68994 14.4335 9.41316L15.0536 9.76617L23.3123 4.99634L20.6513 3.48102Z"
+                fill="url(#paint0_linear_1_127)"
+              />
+              <path
+                d="M23.2949 5.00586L15.0361 9.77568L16.5174 10.628L20.6511 13.013L28.9099 8.24314L23.2949 5.00586Z"
+                fill="url(#paint1_linear_1_127)"
+              />
+              <path
+                d="M16.5175 30.0507L18.6188 31.2646C22.4253 33.4601 27.1187 33.4688 30.9338 31.2646L31.0027 31.2216C34.8522 29.0003 37.1688 24.9967 37.1688 20.5541V5.09949C37.1688 2.8179 35.3172 0.966797 33.0351 0.966797C30.7529 0.966797 28.9014 2.8179 28.9014 5.09949V13.3649V18.1347V20.5627C28.9014 22.0091 28.1263 23.3522 26.869 24.0755L26.8001 24.1185C25.5428 24.8417 23.9926 24.8417 22.7353 24.1185L22.1152 23.7655L13.8564 28.5353L16.5175 30.0507Z"
+                fill="url(#paint2_linear_1_127)"
+              />
+              <path
+                d="M13.8737 28.5266L22.1325 23.7568L20.6513 22.9044L16.5176 20.5195L8.25879 25.2894L13.8737 28.5266Z"
+                fill="url(#paint3_linear_1_127)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1_127"
+                  x1="0.161481"
+                  y1="16.5865"
+                  x2="18.1766"
+                  y2="16.5865"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#1352FE" />
+                  <stop offset="1" stopColor="#009DFF" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_1_127"
+                  x1="20.9246"
+                  y1="7.27825"
+                  x2="23.5059"
+                  y2="11.5502"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#009DFF" />
+                  <stop offset="1" stopColor="#0DABFE" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint2_linear_1_127"
+                  x1="37.0037"
+                  y1="16.9452"
+                  x2="20.8292"
+                  y2="16.9452"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#009DFF" />
+                  <stop offset="1" stopColor="#1352FE" />
+                </linearGradient>
+                <linearGradient
+                  id="paint3_linear_1_127"
+                  x1="16.6522"
+                  y1="26.9173"
+                  x2="13.9997"
+                  y2="22.5603"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#1352FE" />
+                  <stop offset="1" stopColor="#0FA7FE" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <svg
+              className={styles.logoDt}
               data-hovered="true"
               width="129"
               height="33"
@@ -120,6 +193,7 @@ const Header = ({ menuActive, setMenuActive }) => {
             </svg>
           </a>
         </div>
+
         <div onClick={() => openMenu()} className={styles.menuButton}>
           <p>Menu</p>
           <svg

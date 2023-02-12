@@ -1,5 +1,12 @@
 @import '../../styles/animations.scss';
 
+#fullpage {
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .menu {
   pointer-events: none;
 
@@ -33,6 +40,11 @@
   }
 
   &.loaded {
+    .label {
+      transform: translate(0);
+      opacity: 1;
+    }
+
     h1 {
       animation: fadeInUp 1s forwards ease;
     }
@@ -52,6 +64,10 @@
 }
 
 #s-2 {
+  @media (max-width: 480px) {
+    display: none;
+  }
+
   .full-flex-row {
     opacity: 0;
   }
@@ -252,8 +268,16 @@
   }
 }
 
+section {
+  @media (max-width: 480px) {
+    min-height: 100vh;
+  }
+}
+
 section.fp-completely {
   .label {
+    transition: 1s ease;
+    transition-property: opacity, transform;
     animation: fadeInDown 1s forwards ease;
   }
 

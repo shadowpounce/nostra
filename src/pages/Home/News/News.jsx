@@ -1,23 +1,35 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { useSwiper } from 'swiper/react'
 import styles from './News.module.scss'
 import indexingDelay from '../../../utils/indexingDelay'
 import newsData from './newsData'
 
-const categories = [
-  'all',
-  'metaverse',
-  'businesses',
-  'events',
-  'cases',
-  'analytics',
-]
+const FILTER_TAGS = ['metaverse', 'businesses', 'events', 'cases', 'analytics']
 
 const News = () => {
-  const [selectedCategories, setSelectedCategories] = useState(['all'])
   const [swiper, setSwiper] = useState(null)
+  const [activeCategories, setActiveCategories] = useState([])
+  const [catData, setCatData] = useState()
+  const [allCategoriesSelected, setAllCategoriesSelected] = useState(true)
+
+  useEffect(() => {
+    if (
+      activeCategories.length >= 1 &&
+      activeCategories.length < catData.length
+    ) {
+      setAllCategoriesSelected(false)
+    } else if (
+      activeCategories.length < 1 ||
+      activeCategories.length == catData.length
+    ) {
+      setAllCategoriesSelected(true)
+    }
+  }, [activeCategories])
+
+  useEffect(() => {
+    setCatData(FILTER_TAGS)
+  })
 
   useEffect(() => {
     const categories = document.querySelectorAll(`.${styles.category}`)
@@ -28,15 +40,15 @@ const News = () => {
   })
 
   const selectCategory = (cat) => {
-    if (cat.classList.contains(`${styles.active}`)) {
-      setSelectedCategories(
-        selectedCategories.filter((el) => el !== cat.dataset.category)
-      )
-      cat.classList.remove(`${styles.active}`)
-    } else if (!cat.classList.contains(`${styles.active}`)) {
-      cat.classList.add(`${styles.active}`)
-      setSelectedCategories([...selectedCategories, cat.dataset.category])
+    let arr = activeCategories
+
+    if (!activeCategories.includes(cat)) {
+      arr = [...activeCategories, cat]
+    } else {
+      arr = arr.filter((el) => el !== cat)
     }
+
+    return arr
   }
 
   return (
@@ -112,29 +124,31 @@ const News = () => {
       </div>
       <div className={`news-body ${styles.newsBody}`}>
         <div className={styles.controlPanel}>
-          <span
-            className="label"
-            onClick={() => {
-              alert(selectedCategories.current)
-            }}
-          >
-            Categories
-          </span>
+          <span className="label">Categories</span>
           <div className={styles.categories}>
-            {categories.map((cat) => (
-              <div
-                key={cat}
-                data-category={cat}
-                className={`category ${styles.category} ${
-                  cat === 'all' && `${styles.active}`
-                }`}
-                onClick={(e) =>
-                  selectCategory(e.target.closest(`.${styles.category}`))
-                }
-              >
-                <p>{cat}</p>
-              </div>
-            ))}
+            <div
+              onClick={() => {
+                !allCategoriesSelected && setActiveCategories([])
+              }}
+              className={`category ${styles.category} ${
+                allCategoriesSelected && `${styles.active}`
+              }`}
+            >
+              <p>all</p>
+            </div>
+            {catData &&
+              catData.map((cat) => (
+                <div
+                  key={cat}
+                  data-category={cat}
+                  onClick={() => setActiveCategories(selectCategory(cat))}
+                  className={`category ${styles.category} ${
+                    activeCategories.includes(cat) ? `${styles.active}` : ''
+                  }`}
+                >
+                  <p>{cat}</p>
+                </div>
+              ))}
           </div>
           <div className={styles.arrows}>
             <div
@@ -196,37 +210,92 @@ const News = () => {
           }}
           className={styles.newsWrapper}
         >
-          {newsData.map((item, idx) => (
-            <SwiperSlide key={idx} className={`news-item ${styles.newsItem}`}>
-              <svg
-                width="22"
-                height="24"
-                viewBox="0 0 22 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className={styles.newsArrow}
-              >
-                <path
-                  d="M1.28699 22.0293L20.7422 1.99988M20.7422 1.99988L7.2815 2.19565M20.7422 1.99988L20.9379 15.4605"
-                  stroke="#C2C1C1"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <p className={styles.newsNumber}>0{idx + 1}</p>
-              <h3>{item.title}</h3>
-              <p className={styles.newsText}>{item.text}</p>
-              <picture>
-                <source
-                  srcSet={item.img.webp}
-                  className={styles.newsPicture}
-                  type="image/webp"
-                />
-                <img src={item.img.png} className={styles.newsPicture} alt="" />
-              </picture>
-              <p className={styles.newsLabel}>{item.label}</p>
-            </SwiperSlide>
-          ))}
+          {activeCategories.length > 0
+            ? newsData.map((item, idx) => {
+                if (activeCategories.includes(item.category)) {
+                  return (
+                    <SwiperSlide
+                      key={idx}
+                      className={`news-item ${styles.newsItem} ${
+                        !activeCategories.includes(item.category) &&
+                        `${styles.out}`
+                      }`}
+                    >
+                      <svg
+                        width="22"
+                        height="24"
+                        viewBox="0 0 22 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={styles.newsArrow}
+                      >
+                        <path
+                          d="M1.28699 22.0293L20.7422 1.99988M20.7422 1.99988L7.2815 2.19565M20.7422 1.99988L20.9379 15.4605"
+                          stroke="#C2C1C1"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                      <p className={styles.newsNumber}>0{idx + 1}</p>
+                      <h3>{item.title}</h3>
+                      <p className={styles.newsText}>{item.text}</p>
+                      <picture>
+                        <source
+                          srcSet={item.img.webp}
+                          className={styles.newsPicture}
+                          type="image/webp"
+                        />
+                        <img
+                          src={item.img.png}
+                          className={styles.newsPicture}
+                          alt=""
+                        />
+                      </picture>
+                      <p className={styles.newsLabel}>{item.label}</p>
+                    </SwiperSlide>
+                  )
+                }
+              })
+            : newsData.map((item, idx) => {
+                return (
+                  <SwiperSlide
+                    key={idx}
+                    className={`news-item ${styles.newsItem}`}
+                  >
+                    <svg
+                      width="22"
+                      height="24"
+                      viewBox="0 0 22 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={styles.newsArrow}
+                    >
+                      <path
+                        d="M1.28699 22.0293L20.7422 1.99988M20.7422 1.99988L7.2815 2.19565M20.7422 1.99988L20.9379 15.4605"
+                        stroke="#C2C1C1"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    <p className={styles.newsNumber}>0{idx + 1}</p>
+                    <h3>{item.title}</h3>
+                    <p className={styles.newsText}>{item.text}</p>
+                    <picture>
+                      <source
+                        srcSet={item.img.webp}
+                        className={styles.newsPicture}
+                        type="image/webp"
+                      />
+                      <img
+                        src={item.img.png}
+                        className={styles.newsPicture}
+                        alt=""
+                      />
+                    </picture>
+                    <p className={styles.newsLabel}>{item.label}</p>
+                  </SwiperSlide>
+                )
+              })}
         </Swiper>
       </div>
     </section>

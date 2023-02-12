@@ -14,6 +14,7 @@ const data = [
       webp: Img1W,
     },
     label: 'Lorem ipsum dolor sit amet consectetur',
+    category: 'events',
   },
   {
     title: 'Education for everybody',
@@ -23,6 +24,7 @@ const data = [
       webp: Img2W,
     },
     label: 'Lorem ipsum dolor sit amet consectetur',
+    category: 'metaverse',
   },
   {
     title: 'Provide innovative solutons',
@@ -32,6 +34,7 @@ const data = [
       webp: Img3W,
     },
     label: 'Lorem ipsum dolor sit amet consectetur',
+    category: 'metaverse',
   },
   {
     title: 'Education for everybody',
@@ -41,6 +44,7 @@ const data = [
       webp: Img1W,
     },
     label: 'Lorem ipsum dolor sit amet consectetur',
+    category: 'cases',
   },
   {
     title: 'Education for everybody',
@@ -50,6 +54,7 @@ const data = [
       webp: Img2W,
     },
     label: 'Lorem ipsum dolor sit amet consectetur',
+    category: 'analytics',
   },
   {
     title: 'Provide innovative solutons',
@@ -59,6 +64,7 @@ const data = [
       webp: Img3W,
     },
     label: 'Lorem ipsum dolor sit amet consectetur',
+    category: 'businesses',
   },
 ]
 

@@ -64,13 +64,20 @@ const Impressions = () => {
   return (
     <section id="s-5" className={`section ${styles.impressions}`}>
       <div className={styles.container}>
-        <h4>Impressions</h4>
+        <h4>Our app</h4>
         <Swiper
           speed={500}
           centeredSlides={true}
           className={styles.impressionsCarousel}
-          spaceBetween={35}
-          slidesPerView={3}
+          slidesPerView={2}
+          spaceBetween={15}
+          width={500}
+          breakpoints={{
+            481: {
+              slidesPerView: 3,
+              spaceBetween: 35,
+            },
+          }}
           onSlideChange={(swiper) => {
             setActiveSlide(swiper.activeIndex)
           }}

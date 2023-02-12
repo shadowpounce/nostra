@@ -17,6 +17,10 @@
     pointer-events: none;
     z-index: 1;
     left: 0;
+
+    @media (max-width: 480px) {
+      display: none;
+    }
   }
 
   .container {
@@ -25,6 +29,10 @@
     height: 100vh;
     overflow: hidden;
 
+    @media (max-width: 480px) {
+      overflow: unset !important;
+    }
+
     > h3 {
       opacity: 0;
       position: absolute;
@@ -32,6 +40,10 @@
       top: 15px;
       left: 30%;
       transform: translate(-100px, 0);
+
+      @media (max-width: 480px) {
+        display: none;
+      }
     }
 
     .cases {
@@ -41,12 +53,26 @@
       z-index: 2;
       position: relative;
 
+      @media (max-width: 480px) {
+        flex-direction: column;
+      }
+
       .case {
         height: 100%;
         display: flex;
         transition: all 1s ease;
 
+        @media (max-width: 480px) {
+          width: 100%;
+          flex-direction: column;
+          height: 90px;
+        }
+
         &.active {
+          @media (max-width: 480px) {
+            height: 600px;
+          }
+
           .caseHead {
             border-color: rgb(0, 0, 0, 0);
 
@@ -87,6 +113,11 @@
           transition-property: width, opacity;
           position: relative;
 
+          @media (max-width: 480px) {
+            width: 100%;
+            min-width: 100%;
+          }
+
           .bodyInfo {
             opacity: 0;
             transform: translate(0, 100px);
@@ -111,6 +142,10 @@
               margin: 50px 0 0 50px;
             }
 
+            @media (max-width: 480px) {
+              margin: 0 0 0 25px;
+            }
+
             div {
               padding-top: 15px;
               display: flex;
@@ -120,6 +155,10 @@
 
               @media (max-width: 1280px) {
                 gap: 30px;
+              }
+
+              @media (max-width: 480px) {
+                padding-bottom: 30px;
               }
 
               a {
@@ -149,6 +188,10 @@
               @media (max-width: 1400px) {
                 top: -25px;
               }
+
+              @media (max-width: 480px) {
+                top: -15px;
+              }
             }
 
             .image {
@@ -168,6 +211,11 @@
               @media (max-width: 1280px) {
                 height: 250px;
               }
+
+              @media (max-width: 480px) {
+                width: 200px;
+                height: 175px;
+              }
             }
           }
         }
@@ -175,7 +223,6 @@
         .caseHead {
           border: 1.5px solid #0d0d0e;
           height: 100%;
-
           width: 90px;
           padding: 60px 0 50px;
           display: flex;
@@ -202,6 +249,15 @@
             font-size: 14px;
           }
 
+          @media (max-width: 480px) {
+            min-width: 100%;
+            width: 100%;
+            flex-direction: row;
+            transform: none;
+            height: 90px;
+            padding: 36px 20px;
+          }
+
           &::before {
             content: '';
             display: block;
@@ -221,11 +277,17 @@
 
           .caseHeadInfo {
             transition: opacity 0.7s ease;
+            z-index: 1;
           }
 
           span {
             transition: all 0.5s ease;
             transform: matrix(1, 0, 0, -1, 0, 0);
+
+            @media (max-width: 480px) {
+              transform: none;
+              z-index: 1;
+            }
           }
 
           div {
@@ -233,14 +295,27 @@
             flex-direction: column-reverse;
             align-items: center;
             gap: 35px;
+            @media (max-width: 480px) {
+              z-index: 1;
+              flex-direction: row;
+            }
 
             svg {
               transform: matrix(1, 0, 0, -1, 0, 0);
+
+              @media (max-width: 480px) {
+                transform: none;
+              }
             }
 
             small {
               transform: matrix(1, 0, 0, -1, 0, 0) rotate(-180deg);
               writing-mode: vertical-lr;
+
+              @media (max-width: 480px) {
+                transform: none;
+                writing-mode: horizontal-tb;
+              }
             }
           }
         }

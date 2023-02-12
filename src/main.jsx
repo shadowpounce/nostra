@@ -5,13 +5,7 @@ import Cursor from './Components/Cursor/Cursor'
 import './styles/index.scss'
 import './styles/animations.scss'
 
-import { createRoot } from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

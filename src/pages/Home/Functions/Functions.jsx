@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from './How.module.scss'
+import styles from './Functions.module.scss'
 import { useEffect } from 'react'
 import ImgOne from './assets/1.png'
 import ImgOneW from './assets/1.webp'
 
-const How = () => {
+const Functions = () => {
   useEffect(() => {
     const names = document.querySelectorAll(`.${styles.title}`)
     names.forEach((name, idx) => {
@@ -13,9 +13,9 @@ const How = () => {
   })
 
   return (
-    <section id="s-4" className={`section ${styles.how}`}>
+    <section id="s-4" className={`section ${styles.functions}`}>
       <div className={`container ${styles.container}`}>
-        <h3>How</h3>
+        <h3>Functions</h3>
         <div className={styles.wrap}>
           <div className={styles.row}>
             <div className={`name ${styles.title}`}>
@@ -96,4 +96,4 @@ const How = () => {
   )
 }
 
-export default How
+export default Functions

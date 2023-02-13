@@ -35,7 +35,7 @@ const Values = () => {
         slidesPerView={1}
         spaceBetween={25}
         speed={750}
-        width={335}
+        width={250}
         breakpoints={{
           481: {
             speed: 250,
